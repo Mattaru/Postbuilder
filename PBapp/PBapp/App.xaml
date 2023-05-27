@@ -1,0 +1,16 @@
+﻿<Application x:Class="PBapp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PBapp"
+             StartupUri="MVVM/Views/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./Themes/Basic/Brushes.xaml"/>
+                <ResourceDictionary Source="./Themes/Elements/ResourceButtonTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
