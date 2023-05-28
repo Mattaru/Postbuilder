@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PBapp"
         xmlns:vm="clr-namespace:PBapp.MVVM.ViewModels"
+        xmlns:converter="clr-namespace:PBapp.Infrastructure.Converters"
         mc:Ignorable="d"
         Title="{Binding Title}"
         WindowStyle="None"
@@ -15,6 +16,10 @@
     <Window.DataContext>
         <vm:MainViewModel/>
     </Window.DataContext>
+
+    <Window.Resources>
+        <converter:ParamsConverter x:Key="cv"/>
+    </Window.Resources>
 
     <Grid>
         <Grid.RowDefinitions>
@@ -41,7 +46,7 @@
             </Border>
             
         </Grid>
-
+    
         <Grid Grid.Row="1">
 
             <Grid.ColumnDefinitions>
@@ -52,24 +57,54 @@
             <Grid Grid.Column="0">
 
                 <StackPanel>
-
+                    
                     <CheckBox Tag="Ingredient"
+                              Content="Ingredient"
                               Name="Ing"
-                              Style="{StaticResource CheckBox_castom}">
-                        
+                              Style="{StaticResource CheckBox_castom}"
+                              Command="{Binding AddIngredientCommand}">
+
                         <CheckBox.CommandParameter>
-                            <MultiBinding>
+                            <MultiBinding Converter="{StaticResource cv}">
                                 <Binding ElementName="Ing" Path="Content"/>
-                                <Binding ElementName="cbIndia" Path="IsChecked"/>
+                                <Binding ElementName="Ing" Path="IsChecked"/>
                             </MultiBinding>
                         </CheckBox.CommandParameter>
-                        
-                    <CheckBox/>
 
+                    </CheckBox>
 
+                    <CheckBox Tag="Ingredient1"
+                              Content="Ingredient1"
+                              Name="Ing1"
+                              Style="{StaticResource CheckBox_castom}"
+                              Command="{Binding AddIngredientCommand}">
 
+                        <CheckBox.CommandParameter>
+                            <MultiBinding Converter="{StaticResource cv}">
+                                <Binding ElementName="Ing1" Path="Content"/>
+                                <Binding ElementName="Ing1" Path="IsChecked"/>
+                            </MultiBinding>
+                        </CheckBox.CommandParameter>
+
+                    </CheckBox>
+
+                    <CheckBox Tag="Ingredient2"
+                              Content="Ingredient2"
+                              Name="Ing2"
+                              Style="{StaticResource CheckBox_castom}"
+                              Command="{Binding AddIngredientCommand}">
+
+                        <CheckBox.CommandParameter>
+                            <MultiBinding Converter="{StaticResource cv}">
+                                <Binding ElementName="Ing2" Path="Content"/>
+                                <Binding ElementName="Ing2" Path="IsChecked"/>
+                            </MultiBinding>
+                        </CheckBox.CommandParameter>
+
+                    </CheckBox>
+                    
                 </StackPanel>
-                
+
             </Grid>
 
             <Grid Grid.Column="1">
@@ -80,7 +115,8 @@
                             Height="25"
                             Width="60"
                             BorderThickness="0"
-                            Background="Transparent"/>
+                            Background="Transparent"
+                            Command="{Binding CopyToClipBoardCommand}"/>
 
                 </StackPanel>
                 

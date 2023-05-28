@@ -1,8 +1,11 @@
 ﻿using PBapp.Core;
 using PBapp.Infrastructure.Commands;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows;
+using System.Windows.Documents;
 using System.Windows.Input;
 
 namespace PBapp.MVVM.ViewModels
@@ -17,20 +20,29 @@ namespace PBapp.MVVM.ViewModels
 
         #endregion
 
-        private ObservableCollection<string> _ingredients;
+        private List<string> _ingredients = new List<string>();
 
-        public ObservableCollection<string> Ingredients
+        public List<string> Ingredients
         {
             get => _ingredients;
-
+            
             set => Set(ref _ingredients, value);
+        }
+
+        private string _result;
+
+        public string Result
+        {
+            get => _result;
+
+            set => Set(ref _result, value);
         }
 
         // Commands
 
-        #region AddIngredient
+        #region AddIngredientCommand
 
-        public ICommand AddIngredient { get;  }
+        public ICommand AddIngredientCommand { get;  }
 
         private bool CanAddIngredientCommandExecute(object p) => true;
 
@@ -45,6 +57,7 @@ namespace PBapp.MVVM.ViewModels
             if (check)
             {
                 Ingredients.Add(ingredient);
+                Console.WriteLine(ingredient);
             }
             else
             {
@@ -55,16 +68,21 @@ namespace PBapp.MVVM.ViewModels
 
         #endregion
 
-        #region CopyToClipBoard
+        #region CopyToClipBoardCommand
 
-        public ICommand CopyToClipBoard { get; }
+        public ICommand CopyToClipBoardCommand { get; }
 
         private bool CanCopyToClipBoardCommandExecute(object p) => true;
 
         private void OnCopyToClipBoardCommandExecuted(object p)
         {
-            
+            foreach (var item in Ingredients)
+            {
+                Result = Result + " " + item;
+            }
 
+            Clipboard.SetText(Result.Trim());
+            Result = string.Empty;
         }
 
         #endregion
@@ -79,9 +97,13 @@ namespace PBapp.MVVM.ViewModels
 
         #endregion
 
-        public MainViewModel() 
-        {
+        public MainViewModel()
+        { 
+            AddIngredientCommand = new LambdaCommand(OnAddIngredientCommandExecuted, CanAddIngredientCommandExecute);
+            CopyToClipBoardCommand = new LambdaCommand(OnCopyToClipBoardCommandExecuted, CanCopyToClipBoardCommandExecute);
             CloseAppCommand = new LambdaCommand(OnCloseAppCommandExecuted, CanCloseAppCommandExecute);
+
+            Ingredients.Add("");
         }
     }
 }
