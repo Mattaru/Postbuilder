@@ -13,7 +13,10 @@
     <Page Update="Themes\Basic\Brushes.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Themes\Elements\ResourceButtonTheme.xaml">
+    <Page Update="Themes\Elements\CheckBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Elements\RadioButton.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

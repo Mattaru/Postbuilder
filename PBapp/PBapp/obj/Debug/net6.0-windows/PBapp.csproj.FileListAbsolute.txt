@@ -21,5 +21,6 @@ D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\MVVM\Views\Ma
 D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\MVVM\Views\MainWindow.baml
 D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
 D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\Themes\Basic\Brushes.baml
-D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\Themes\Elements\ResourceButtonTheme.baml
 D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\App.baml
+D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\Themes\Elements\RadioButton.baml
+D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\Themes\Elements\CheckBox.baml

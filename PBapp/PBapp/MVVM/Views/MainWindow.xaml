@@ -53,14 +53,34 @@
 
                 <StackPanel>
 
-                    <RadioButton Tag="ingredien"
-                                 Style="{StaticResource HTForm_b}"/>
+                    <CheckBox Tag="Ingredient"
+                              Name="Ing"
+                              Style="{StaticResource CheckBox_castom}">
+                        
+                        <CheckBox.CommandParameter>
+                            <MultiBinding>
+                                <Binding ElementName="Ing" Path="Content"/>
+                                <Binding ElementName="cbIndia" Path="IsChecked"/>
+                            </MultiBinding>
+                        </CheckBox.CommandParameter>
+                        
+                    <CheckBox/>
 
-                    <RadioButton Tag="ingredien"
-                                 Style="{StaticResource HTForm_b}"/>
 
-                    <RadioButton Tag="ingredien"
-                                 Style="{StaticResource HTForm_b}"/>
+
+                </StackPanel>
+                
+            </Grid>
+
+            <Grid Grid.Column="1">
+
+                <StackPanel Orientation="Vertical" VerticalAlignment="Bottom">
+
+                    <Button Content="Copy"
+                            Height="25"
+                            Width="60"
+                            BorderThickness="0"
+                            Background="Transparent"/>
 
                 </StackPanel>
                 
