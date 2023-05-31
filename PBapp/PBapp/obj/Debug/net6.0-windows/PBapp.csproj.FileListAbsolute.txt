@@ -24,3 +24,6 @@ D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\Themes\Basic\
 D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\App.baml
 D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\Themes\Elements\RadioButton.baml
 D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\Themes\Elements\CheckBox.baml
+D:\C#\GITProjects\Postbuilder\PBapp\PBapp\bin\Debug\net6.0-windows\Data\ingredients.json
+D:\C#\GITProjects\Postbuilder\PBapp\PBapp\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\PBapp.csproj.CopyComplete

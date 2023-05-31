@@ -59,14 +59,14 @@
                 <StackPanel>
                     
                     <CheckBox Tag="Ingredient"
-                              Content="Ingredient"
+                              Content="{Binding WWW}"
                               Name="Ing"
                               Style="{StaticResource CheckBox_castom}"
                               Command="{Binding AddIngredientCommand}">
 
                         <CheckBox.CommandParameter>
                             <MultiBinding Converter="{StaticResource cv}">
-                                <Binding ElementName="Ing" Path="Content"/>
+                                <Binding ElementName="Ing" Path="Tag"/>
                                 <Binding ElementName="Ing" Path="IsChecked"/>
                             </MultiBinding>
                         </CheckBox.CommandParameter>
