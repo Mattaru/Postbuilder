@@ -1,0 +1,8 @@
+D:\C#\ReleaseBuilds\PB\Imgs\myico.png
+D:\C#\ReleaseBuilds\PB\Data\ingredients.json
+D:\C#\ReleaseBuilds\PB\PBapp.exe
+D:\C#\ReleaseBuilds\PB\PBapp.dll
+D:\C#\ReleaseBuilds\PB\PBapp.deps.json
+D:\C#\ReleaseBuilds\PB\PBapp.runtimeconfig.json
+D:\C#\ReleaseBuilds\PB\PBapp.pdb
+D:\C#\ReleaseBuilds\PB\Newtonsoft.Json.dll

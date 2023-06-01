@@ -10,7 +10,7 @@
         Title="{Binding Title}"
         WindowStyle="None"
         ResizeMode="NoResize"
-        Height="700" Width="1200"
+        Height="768" Width="1280"
         WindowStartupLocation="CenterScreen">
 
     <Window.DataContext>
@@ -22,47 +22,26 @@
     </Window.Resources>
 
     <Grid>
-        
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="25"></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-
-        <Grid Grid.Row="0">
-            
-            <Border Background="LightPink"
-                    MouseDown="Border_MouseDown">
-
-                <StackPanel Orientation="Horizontal"
-                            HorizontalAlignment="Right">
-
-                    <Button Content="Закрыть"
-                            Width="60"
-                            BorderThickness="0"
-                            Background="Transparent"
-                            Command="{Binding CloseAppCommand}"/>
-
-                </StackPanel>
-
-            </Border>
-            
-        </Grid>
-    
-        <Grid Grid.Row="1">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Imgs/teddy-bear.jpg"/>
+        </Grid.Background>
+        <Grid>
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition Width="60"></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="0">
 
-                <Grid.Background>
-                    <ImageBrush ImageSource="/Imgs/teddy-bear.jpg"/>
-                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
 
-                <StackPanel>
+                <Border Grid.Row="0" MouseDown="Border_MouseDown" Background="Transparent"/>
+
+                <StackPanel Grid.Row="1">
 
                     <CheckBox Tag="Ретинол"
                               Name="Ing"
@@ -264,19 +243,65 @@
 
             </Grid>
 
-            <Grid Grid.Column="1">
+            <Grid Grid.Column="1"
+                  Background="Transparent">
 
-                <StackPanel Orientation="Vertical" VerticalAlignment="Bottom">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="100"></RowDefinition>
+                </Grid.RowDefinitions>
 
-                    <Button Content="Стырить"
-                            Height="25"
-                            Width="60"
-                            BorderThickness="0"
-                            Background="Transparent"
-                            Command="{Binding CopyToClipBoardCommand}"/>
+                <Grid Grid.Row="0">
+                    
+                    <StackPanel Orientation="Vertical"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Bottom">
 
-                </StackPanel>
+                        <Button Content="Закрыть"
+                                Height="90"
+                                Width="90"
+                                FontWeight="Bold"
+                                BorderThickness="0"
+                                Opacity="0.7"
+                                Background="LightPink"  
+                                Command="{Binding CloseAppCommand}">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="50"></Setter>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+
+                    </StackPanel>
+
+                </Grid>
+
+                <Grid Grid.Row="2">
                 
+                    <StackPanel Orientation="Vertical"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top">
+
+                        <Button Content="Стырить"
+                                Height="90"
+                                Width="90"
+                                FontWeight="Bold"
+                                BorderThickness="0"
+                                Opacity="0.7"
+                                Background="LightPink"
+                                Command="{Binding CopyToClipBoardCommand}">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="50"></Setter>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+
+                    </StackPanel>
+
+                </Grid>
+
             </Grid>
             
         </Grid>

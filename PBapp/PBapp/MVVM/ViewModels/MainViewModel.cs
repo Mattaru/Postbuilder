@@ -39,9 +39,9 @@ namespace PBapp.MVVM.ViewModels
 
         #region Result
 
-        private string _result;
+        private string? _result;
 
-        public string Result { get => _result; set => Set(ref _result, value); }
+        public string? Result { get => _result; set => Set(ref _result, value); }
 
         #endregion
 
@@ -91,10 +91,16 @@ namespace PBapp.MVVM.ViewModels
             }
 
             if (Result is not null) Clipboard.SetText(Result.Trim());
-            else 
-            { 
-                Result = string.Empty;
-                Clipboard.SetText(Result.Trim());
+            else
+            {
+                try
+                {
+                    Clipboard.Clear();
+                }
+                catch (Exception ex)
+                {
+                   
+                }
             }
 
             Result = string.Empty;

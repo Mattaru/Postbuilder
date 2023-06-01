@@ -5,15 +5,25 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <PackageIcon>myico.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Imgs\myico.png" />
     <None Remove="Imgs\teddy-bear.jpg" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Imgs\teddy-bear.jpg">
+    <Content Include="Imgs\myico.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Imgs\teddy-bear.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
 

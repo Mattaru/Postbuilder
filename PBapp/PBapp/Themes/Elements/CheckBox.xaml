@@ -53,7 +53,7 @@
                                 <Setter Property="Foreground" Value="{StaticResource BlackFontBrush}"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Foreground" Value="{StaticResource SecondaryBrush}"/>
+                                <Setter Property="Foreground" Value="{StaticResource PrimariBrush}"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
 
