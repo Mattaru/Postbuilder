@@ -27,5 +27,4 @@ D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Release\net6.0-windows\refint\PBap
 D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Release\net6.0-windows\PBapp.pdb
 D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Release\net6.0-windows\PBapp.genruntimeconfig.cache
 D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Release\net6.0-windows\ref\PBapp.dll
-D:\C#\GITProjects\Postbuilder\PBapp\PBapp\bin\Release\net6.0-windows\Imgs\myico.png
 D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Release\net6.0-windows\PBapp_Content.g.cs

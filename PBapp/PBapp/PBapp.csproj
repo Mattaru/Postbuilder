@@ -6,19 +6,15 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <PackageIcon>myico.png</PackageIcon>
+    <ApplicationIcon>Imgs\Icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Imgs\myico.png" />
     <None Remove="Imgs\teddy-bear.jpg" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Imgs\myico.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Imgs\Icon.ico" />
   </ItemGroup>
 
   <ItemGroup>

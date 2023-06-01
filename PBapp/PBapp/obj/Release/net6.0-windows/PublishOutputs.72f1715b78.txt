@@ -1,4 +1,3 @@
-D:\C#\ReleaseBuilds\PB\Imgs\myico.png
 D:\C#\ReleaseBuilds\PB\Data\ingredients.json
 D:\C#\ReleaseBuilds\PB\PBapp.exe
 D:\C#\ReleaseBuilds\PB\PBapp.dll
