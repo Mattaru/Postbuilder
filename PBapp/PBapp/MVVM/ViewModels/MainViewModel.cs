@@ -2,8 +2,11 @@
 using PBapp.Data;
 using PBapp.Infrastructure.Commands;
 using PBapp.MVVM.Models;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
+using System.Windows.Documents;
 using System.Windows.Input;
 
 namespace PBapp.MVVM.ViewModels
@@ -62,21 +65,12 @@ namespace PBapp.MVVM.ViewModels
             {
                 if (item.Name == ingredient)
                 {
-                    IngredientModel ing = new IngredientModel()
-                    {
-                        Name = item.Name,
-                        Description = item.Description,
-                        Priority = item.Priority,
-                    };
-
-                    if (check) CheckedIngredients.Add(ing);
-                    else CheckedIngredients.Remove(ing);
+                    if (check) CheckedIngredients.Add(item);
+                    else CheckedIngredients.RemoveAt(CheckedIngredients.IndexOf(item));
 
                     break;
                 }
             }
-
-            
         }
 
         #endregion
@@ -89,12 +83,20 @@ namespace PBapp.MVVM.ViewModels
 
         private void OnCopyToClipBoardCommandExecuted(object p)
         {
-            foreach (var item in CheckedIngredients)
+            var i = CheckedIngredients.OrderBy(x => x.Priority);
+
+            foreach (var item in i)
             {
                 Result = Result + $"\n\n" + item.Description;
             }
 
-            Clipboard.SetText(Result.Trim());
+            if (Result is not null) Clipboard.SetText(Result.Trim());
+            else 
+            { 
+                Result = string.Empty;
+                Clipboard.SetText(Result.Trim());
+            }
+
             Result = string.Empty;
         }
 

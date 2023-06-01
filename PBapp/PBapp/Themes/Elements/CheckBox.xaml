@@ -7,7 +7,7 @@
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Foreground" Value="{StaticResource SecondaryBrush}"/>
+            <Setter Property="Foreground" Value="{StaticResource BlackFontBrush}"/>
             <Setter Property="FontSize" Value="16"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -39,6 +39,7 @@
                                     BorderThickness="0,0,8,0"
                                     CornerRadius="0,4,4,0"
                                     Width="8"
+                                    Opacity="0.6"
                                     Visibility="Hidden"/>
 
                         </Grid>
@@ -52,7 +53,7 @@
                                 <Setter Property="Foreground" Value="{StaticResource BlackFontBrush}"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Foreground" Value="{StaticResource PrimariBrush}"/>
+                                <Setter Property="Foreground" Value="{StaticResource SecondaryBrush}"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
 
