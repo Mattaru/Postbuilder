@@ -27,3 +27,4 @@ D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\Themes\Elemen
 D:\C#\GITProjects\Postbuilder\PBapp\PBapp\bin\Debug\net6.0-windows\Data\ingredients.json
 D:\C#\GITProjects\Postbuilder\PBapp\PBapp\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
 D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\PBapp.csproj.CopyComplete
+D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\PBapp_Content.g.cs

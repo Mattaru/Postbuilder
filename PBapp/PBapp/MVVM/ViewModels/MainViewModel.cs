@@ -91,17 +91,6 @@ namespace PBapp.MVVM.ViewModels
             }
 
             if (Result is not null) Clipboard.SetText(Result.Trim());
-            else
-            {
-                try
-                {
-                    Clipboard.Clear();
-                }
-                catch (Exception ex)
-                {
-                   
-                }
-            }
 
             Result = string.Empty;
         }
@@ -125,6 +114,12 @@ namespace PBapp.MVVM.ViewModels
             CloseAppCommand = new LambdaCommand(OnCloseAppCommandExecuted, CanCloseAppCommandExecute);
 
             Ingredients = GetData.GetListFromJson(Ingredients);
+            CheckedIngredients.Add(new IngredientModel
+            {
+                Name = string.Empty,
+                Description = string.Empty,
+                Priority = 4,
+            });
         }
     }
 }
