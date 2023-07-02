@@ -118,7 +118,7 @@ namespace PBapp.MVVM.ViewModels
             {
                 Name = string.Empty,
                 Description = string.Empty,
-                Priority = 4,
+                Priority = 100,
             });
         }
     }
