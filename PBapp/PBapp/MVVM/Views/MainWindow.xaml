@@ -28,222 +28,372 @@
         <Grid>
 
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition Width="100"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Grid Grid.Column="0">
+            <Grid Grid.Column="1">
 
                 <Grid.RowDefinitions>
                     <RowDefinition Height="25"></RowDefinition>
                     <RowDefinition></RowDefinition>
+                    <RowDefinition Height="25"></RowDefinition>
                 </Grid.RowDefinitions>
 
                 <Border Grid.Row="0" MouseDown="Border_MouseDown" Background="Transparent"/>
 
-                <StackPanel Grid.Row="1">
+                <Grid Grid.Row="1">
 
-                    <CheckBox Tag="Ретинол"
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Background="Black" Opacity="0.5"></Border>
+                        
+                        <StackPanel Grid.Column="1">
+
+                            <CheckBox Tag="Ретинол"
                               Name="Ing"
                               Style="{StaticResource CheckBox_castom}"
                               Command="{Binding AddIngredientCommand}">
 
-                        <CheckBox.CommandParameter>
-                            <MultiBinding Converter="{StaticResource cv}">
-                                <Binding ElementName="Ing" Path="Tag"/>
-                                <Binding ElementName="Ing" Path="IsChecked"/>
-                            </MultiBinding>
-                        </CheckBox.CommandParameter>
+                                <CheckBox.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource cv}">
+                                        <Binding ElementName="Ing" Path="Tag"/>
+                                        <Binding ElementName="Ing" Path="IsChecked"/>
+                                    </MultiBinding>
+                                </CheckBox.CommandParameter>
 
-                    </CheckBox>
+                            </CheckBox>
 
-                    <CheckBox Tag="Идебенон"
+                            <CheckBox Tag="Идебенон"
                               Name="Ing1"
                               Style="{StaticResource CheckBox_castom}"
                               Command="{Binding AddIngredientCommand}">
 
-                        <CheckBox.CommandParameter>
-                            <MultiBinding Converter="{StaticResource cv}">
-                                <Binding ElementName="Ing1" Path="Tag"/>
-                                <Binding ElementName="Ing1" Path="IsChecked"/>
-                            </MultiBinding>
-                        </CheckBox.CommandParameter>
+                                <CheckBox.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource cv}">
+                                        <Binding ElementName="Ing1" Path="Tag"/>
+                                        <Binding ElementName="Ing1" Path="IsChecked"/>
+                                    </MultiBinding>
+                                </CheckBox.CommandParameter>
 
-                    </CheckBox>
+                            </CheckBox>
 
-                    <CheckBox Tag="Комплекс пептидов"
+                            <CheckBox Tag="Комплекс пептидов"
                               Name="Ing2"
                               Style="{StaticResource CheckBox_castom}"
                               Command="{Binding AddIngredientCommand}">
 
-                        <CheckBox.CommandParameter>
-                            <MultiBinding Converter="{StaticResource cv}">
-                                <Binding ElementName="Ing2" Path="Tag"/>
-                                <Binding ElementName="Ing2" Path="IsChecked"/>
-                            </MultiBinding>
-                        </CheckBox.CommandParameter>
+                                <CheckBox.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource cv}">
+                                        <Binding ElementName="Ing2" Path="Tag"/>
+                                        <Binding ElementName="Ing2" Path="IsChecked"/>
+                                    </MultiBinding>
+                                </CheckBox.CommandParameter>
 
-                    </CheckBox>
+                            </CheckBox>
 
-                    <CheckBox Tag="Лактобактерии"
+                            <CheckBox Tag="Лактобактерии"
                               Name="Ing3"
                               Style="{StaticResource CheckBox_castom}"
                               Command="{Binding AddIngredientCommand}">
 
-                        <CheckBox.CommandParameter>
-                            <MultiBinding Converter="{StaticResource cv}">
-                                <Binding ElementName="Ing3" Path="Tag"/>
-                                <Binding ElementName="Ing3" Path="IsChecked"/>
-                            </MultiBinding>
-                        </CheckBox.CommandParameter>
+                                <CheckBox.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource cv}">
+                                        <Binding ElementName="Ing3" Path="Tag"/>
+                                        <Binding ElementName="Ing3" Path="IsChecked"/>
+                                    </MultiBinding>
+                                </CheckBox.CommandParameter>
 
-                    </CheckBox>
+                            </CheckBox>
 
-                    <CheckBox Tag="Пробиотики"
+                            <CheckBox Tag="Пробиотики"
                               Name="Ing4"
                               Style="{StaticResource CheckBox_castom}"
                               Command="{Binding AddIngredientCommand}">
 
-                        <CheckBox.CommandParameter>
-                            <MultiBinding Converter="{StaticResource cv}">
-                                <Binding ElementName="Ing4" Path="Tag"/>
-                                <Binding ElementName="Ing4" Path="IsChecked"/>
-                            </MultiBinding>
-                        </CheckBox.CommandParameter>
+                                <CheckBox.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource cv}">
+                                        <Binding ElementName="Ing4" Path="Tag"/>
+                                        <Binding ElementName="Ing4" Path="IsChecked"/>
+                                    </MultiBinding>
+                                </CheckBox.CommandParameter>
 
-                    </CheckBox>
+                            </CheckBox>
 
-                    <CheckBox Tag="Низкомолекулярный коллаген"
+                            <CheckBox Tag="Низкомолекулярный коллаген"
                               Name="Ing5"
                               Style="{StaticResource CheckBox_castom}"
                               Command="{Binding AddIngredientCommand}">
 
-                        <CheckBox.CommandParameter>
-                            <MultiBinding Converter="{StaticResource cv}">
-                                <Binding ElementName="Ing5" Path="Tag"/>
-                                <Binding ElementName="Ing5" Path="IsChecked"/>
-                            </MultiBinding>
-                        </CheckBox.CommandParameter>
+                                <CheckBox.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource cv}">
+                                        <Binding ElementName="Ing5" Path="Tag"/>
+                                        <Binding ElementName="Ing5" Path="IsChecked"/>
+                                    </MultiBinding>
+                                </CheckBox.CommandParameter>
 
-                    </CheckBox>
+                            </CheckBox>
 
-                    <CheckBox Tag="Стволовые клетки растений"
+                            <CheckBox Tag="Стволовые клетки растений"
                               Name="Ing6"
                               Style="{StaticResource CheckBox_castom}"
                               Command="{Binding AddIngredientCommand}">
 
-                        <CheckBox.CommandParameter>
-                            <MultiBinding Converter="{StaticResource cv}">
-                                <Binding ElementName="Ing6" Path="Tag"/>
-                                <Binding ElementName="Ing6" Path="IsChecked"/>
-                            </MultiBinding>
-                        </CheckBox.CommandParameter>
+                                <CheckBox.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource cv}">
+                                        <Binding ElementName="Ing6" Path="Tag"/>
+                                        <Binding ElementName="Ing6" Path="IsChecked"/>
+                                    </MultiBinding>
+                                </CheckBox.CommandParameter>
 
-                    </CheckBox>
+                            </CheckBox>
 
-                    <CheckBox Tag="Технология липосом"
+                            <CheckBox Tag="Технология липосом"
                               Name="Ing7"
                               Style="{StaticResource CheckBox_castom}"
                               Command="{Binding AddIngredientCommand}">
 
-                        <CheckBox.CommandParameter>
-                            <MultiBinding Converter="{StaticResource cv}">
-                                <Binding ElementName="Ing7" Path="Tag"/>
-                                <Binding ElementName="Ing7" Path="IsChecked"/>
-                            </MultiBinding>
-                        </CheckBox.CommandParameter>
+                                <CheckBox.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource cv}">
+                                        <Binding ElementName="Ing7" Path="Tag"/>
+                                        <Binding ElementName="Ing7" Path="IsChecked"/>
+                                    </MultiBinding>
+                                </CheckBox.CommandParameter>
 
-                    </CheckBox>
+                            </CheckBox>
 
-                    <CheckBox Tag="Гиалуроновой кислоты"
+                            <CheckBox Tag="Гиалуроновой кислоты"
                               Name="Ing8"
                               Style="{StaticResource CheckBox_castom}"
                               Command="{Binding AddIngredientCommand}">
 
-                        <CheckBox.CommandParameter>
-                            <MultiBinding Converter="{StaticResource cv}">
-                                <Binding ElementName="Ing8" Path="Tag"/>
-                                <Binding ElementName="Ing8" Path="IsChecked"/>
-                            </MultiBinding>
-                        </CheckBox.CommandParameter>
+                                <CheckBox.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource cv}">
+                                        <Binding ElementName="Ing8" Path="Tag"/>
+                                        <Binding ElementName="Ing8" Path="IsChecked"/>
+                                    </MultiBinding>
+                                </CheckBox.CommandParameter>
 
-                    </CheckBox>
+                            </CheckBox>
 
-                    <CheckBox Tag="Керамиды"
+                            <CheckBox Tag="Керамиды"
                               Name="Ing9"
                               Style="{StaticResource CheckBox_castom}"
                               Command="{Binding AddIngredientCommand}">
 
-                        <CheckBox.CommandParameter>
-                            <MultiBinding Converter="{StaticResource cv}">
-                                <Binding ElementName="Ing9" Path="Tag"/>
-                                <Binding ElementName="Ing9" Path="IsChecked"/>
-                            </MultiBinding>
-                        </CheckBox.CommandParameter>
+                                <CheckBox.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource cv}">
+                                        <Binding ElementName="Ing9" Path="Tag"/>
+                                        <Binding ElementName="Ing9" Path="IsChecked"/>
+                                    </MultiBinding>
+                                </CheckBox.CommandParameter>
 
-                    </CheckBox>
+                            </CheckBox>
 
-                    <CheckBox Tag="Ниацинамид"
+                            <CheckBox Tag="Ниацинамид"
                               Name="Ing10"
                               Style="{StaticResource CheckBox_castom}"
                               Command="{Binding AddIngredientCommand}">
 
-                        <CheckBox.CommandParameter>
-                            <MultiBinding Converter="{StaticResource cv}">
-                                <Binding ElementName="Ing10" Path="Tag"/>
-                                <Binding ElementName="Ing10" Path="IsChecked"/>
-                            </MultiBinding>
-                        </CheckBox.CommandParameter>
+                                <CheckBox.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource cv}">
+                                        <Binding ElementName="Ing10" Path="Tag"/>
+                                        <Binding ElementName="Ing10" Path="IsChecked"/>
+                                    </MultiBinding>
+                                </CheckBox.CommandParameter>
 
-                    </CheckBox>
+                            </CheckBox>
 
-                    <CheckBox Tag="Аденозин"
+                            <CheckBox Tag="Аденозин"
                               Name="Ing11"
                               Style="{StaticResource CheckBox_castom}"
                               Command="{Binding AddIngredientCommand}">
 
-                        <CheckBox.CommandParameter>
-                            <MultiBinding Converter="{StaticResource cv}">
-                                <Binding ElementName="Ing11" Path="Tag"/>
-                                <Binding ElementName="Ing11" Path="IsChecked"/>
-                            </MultiBinding>
-                        </CheckBox.CommandParameter>
+                                <CheckBox.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource cv}">
+                                        <Binding ElementName="Ing11" Path="Tag"/>
+                                        <Binding ElementName="Ing11" Path="IsChecked"/>
+                                    </MultiBinding>
+                                </CheckBox.CommandParameter>
 
-                    </CheckBox>
+                            </CheckBox>
 
-                    <CheckBox Tag="Coenzyme Q10"
+                            <CheckBox Tag="Coenzyme Q10"
                               Name="Ing12"
                               Style="{StaticResource CheckBox_castom}"
                               Command="{Binding AddIngredientCommand}">
 
-                        <CheckBox.CommandParameter>
-                            <MultiBinding Converter="{StaticResource cv}">
-                                <Binding ElementName="Ing12" Path="Tag"/>
-                                <Binding ElementName="Ing12" Path="IsChecked"/>
-                            </MultiBinding>
-                        </CheckBox.CommandParameter>
+                                <CheckBox.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource cv}">
+                                        <Binding ElementName="Ing12" Path="Tag"/>
+                                        <Binding ElementName="Ing12" Path="IsChecked"/>
+                                    </MultiBinding>
+                                </CheckBox.CommandParameter>
 
-                    </CheckBox>
+                            </CheckBox>
 
-                    <CheckBox Tag="....."
+                            <CheckBox Tag="Цеолит"
                               Name="Ing13"
                               Style="{StaticResource CheckBox_castom}"
                               Command="{Binding AddIngredientCommand}">
 
-                        <CheckBox.CommandParameter>
-                            <MultiBinding Converter="{StaticResource cv}">
-                                <Binding ElementName="Ing13" Path="Tag"/>
-                                <Binding ElementName="Ing13" Path="IsChecked"/>
-                            </MultiBinding>
-                        </CheckBox.CommandParameter>
+                                <CheckBox.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource cv}">
+                                        <Binding ElementName="Ing13" Path="Tag"/>
+                                        <Binding ElementName="Ing13" Path="IsChecked"/>
+                                    </MultiBinding>
+                                </CheckBox.CommandParameter>
 
-                    </CheckBox>
+                            </CheckBox>
 
-                </StackPanel>
+                        </StackPanel>
 
+                    </Grid>
+
+                    <Grid Grid.Column="1">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Background="Black" Opacity="0.5"></Border>
+
+                        <StackPanel Grid.Column="1">
+
+                            <CheckBox Tag="Трегалоза"
+                              Name="Ing14"
+                              Style="{StaticResource CheckBox_castom}"
+                              Command="{Binding AddIngredientCommand}">
+
+                                <CheckBox.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource cv}">
+                                        <Binding ElementName="Ing14" Path="Tag"/>
+                                        <Binding ElementName="Ing14" Path="IsChecked"/>
+                                    </MultiBinding>
+                                </CheckBox.CommandParameter>
+
+                            </CheckBox>
+
+                            <CheckBox Tag="Глутатион"
+                              Name="Ing15"
+                              Style="{StaticResource CheckBox_castom}"
+                              Command="{Binding AddIngredientCommand}">
+
+                                <CheckBox.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource cv}">
+                                        <Binding ElementName="Ing15" Path="Tag"/>
+                                        <Binding ElementName="Ing15" Path="IsChecked"/>
+                                    </MultiBinding>
+                                </CheckBox.CommandParameter>
+
+                            </CheckBox>
+
+                            <CheckBox Tag="Экстракт икры"
+                              Name="Ing16"
+                              Style="{StaticResource CheckBox_castom}"
+                              Command="{Binding AddIngredientCommand}">
+
+                                <CheckBox.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource cv}">
+                                        <Binding ElementName="Ing16" Path="Tag"/>
+                                        <Binding ElementName="Ing16" Path="IsChecked"/>
+                                    </MultiBinding>
+                                </CheckBox.CommandParameter>
+
+                            </CheckBox>
+
+                            <CheckBox Tag="Серебро"
+                              Name="Ing17"
+                              Style="{StaticResource CheckBox_castom}"
+                              Command="{Binding AddIngredientCommand}">
+
+                                <CheckBox.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource cv}">
+                                        <Binding ElementName="Ing17" Path="Tag"/>
+                                        <Binding ElementName="Ing17" Path="IsChecked"/>
+                                    </MultiBinding>
+                                </CheckBox.CommandParameter>
+
+                            </CheckBox>
+
+                            <CheckBox Tag="Аргинин"
+                              Name="Ing18"
+                              Style="{StaticResource CheckBox_castom}"
+                              Command="{Binding AddIngredientCommand}">
+
+                                <CheckBox.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource cv}">
+                                        <Binding ElementName="Ing18" Path="Tag"/>
+                                        <Binding ElementName="Ing18" Path="IsChecked"/>
+                                    </MultiBinding>
+                                </CheckBox.CommandParameter>
+
+                            </CheckBox>
+
+                            <CheckBox Tag="Волюфилин"
+                              Name="Ing19"
+                              Style="{StaticResource CheckBox_castom}"
+                              Command="{Binding AddIngredientCommand}">
+
+                                <CheckBox.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource cv}">
+                                        <Binding ElementName="Ing19" Path="Tag"/>
+                                        <Binding ElementName="Ing19" Path="IsChecked"/>
+                                    </MultiBinding>
+                                </CheckBox.CommandParameter>
+
+                            </CheckBox>
+
+                            <CheckBox Tag="Бетаин"
+                              Name="Ing20"
+                              Style="{StaticResource CheckBox_castom}"
+                              Command="{Binding AddIngredientCommand}">
+
+                                <CheckBox.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource cv}">
+                                        <Binding ElementName="Ing20" Path="Tag"/>
+                                        <Binding ElementName="Ing20" Path="IsChecked"/>
+                                    </MultiBinding>
+                                </CheckBox.CommandParameter>
+
+                            </CheckBox>
+
+                            <CheckBox Tag="....."
+                              Name="Ing21"
+                              Style="{StaticResource CheckBox_castom}"
+                              Command="{Binding AddIngredientCommand}">
+
+                                <CheckBox.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource cv}">
+                                        <Binding ElementName="Ing21" Path="Tag"/>
+                                        <Binding ElementName="Ing21" Path="IsChecked"/>
+                                    </MultiBinding>
+                                </CheckBox.CommandParameter>
+
+                            </CheckBox>
+
+                        </StackPanel>
+
+                    </Grid>
+
+                </Grid>
+      
             </Grid>
 
-            <Grid Grid.Column="1"
+            <Grid Grid.Column="2"
                   Background="Transparent">
 
                 <Grid.RowDefinitions>
