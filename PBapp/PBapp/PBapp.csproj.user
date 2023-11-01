@@ -9,7 +9,39 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="MVVM\Views\MainWindow.xaml">
+    <Compile Update="Infrastructure\Components\LoadingSpinner.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Infrastructure\Components\NavigationButton.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Infrastructure\Components\NavigationMenu.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\Views\CompositionsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\Views\NewsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Infrastructure\Components\LoadingSpinner.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Infrastructure\Components\NavigationButton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Infrastructure\Components\NavigationMenu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\Views\CompositionsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\Views\NewsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\Views\Windows\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Themes\Basic\Brushes.xaml">
@@ -18,7 +50,16 @@
     <Page Update="Themes\Elements\CheckBox.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Themes\Elements\Hyperlink.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Elements\NavigationRadioButton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Themes\Elements\RadioButton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Elements\ResourceButton.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

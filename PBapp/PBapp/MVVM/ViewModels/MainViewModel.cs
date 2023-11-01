@@ -4,6 +4,7 @@ using PBapp.Infrastructure.Commands;
 using PBapp.MVVM.Models;
 using System;
 using System.Collections.Generic;
+using PBapp.MVVM.Views;
 using System.Linq;
 using System.Windows;
 using System.Windows.Documents;
@@ -13,13 +14,9 @@ namespace PBapp.MVVM.ViewModels
 {
     internal class MainViewModel : ObservableObject
     {
-        #region Ingredients
+        private readonly NewsView? NewsV;
 
-        private List<IngredientModel> _ingredients = new List<IngredientModel>();
-
-        public List<IngredientModel> Ingredients { get => _ingredients; set => Set(ref _ingredients, value); }
-
-        #endregion
+        private readonly CompositionsView? CompositionsV;
 
         #region Tittle
 
@@ -29,97 +26,63 @@ namespace PBapp.MVVM.ViewModels
 
         #endregion
 
-        #region CheckedIngredients
+        #region Current view
 
-        private List<IngredientModel> _checkedIngredients = new List<IngredientModel>();
+        static object? _currentView;
 
-        public List<IngredientModel> CheckedIngredients { get => _checkedIngredients; set => Set(ref _checkedIngredients, value); }
-
-        #endregion
-
-        #region Result
-
-        private string? _result;
-
-        public string? Result { get => _result; set => Set(ref _result, value); }
+        public object? CurrentView { get => _currentView; set => Set(ref _currentView, value); }
 
         #endregion
 
         // Commands
 
-        #region AddIngredientCommand
+        #region SelectCompositionsViewCommand
 
-        public ICommand AddIngredientCommand { get;  }
+        public ICommand SelectCompositionsViewCommand { get; }
 
-        private bool CanAddIngredientCommandExecute(object p) => true;
-
-        private void OnAddIngredientCommandExecuted(object p)
+        private bool CanSelectCompositionsViewCommandExecute(object p)
         {
-            var values = (object[])p;
+            if (CurrentView is CompositionsView)
+                return false;
+            return true;
+        }
 
-            string ingredient = (string)values[0];
-
-            bool check = (bool)values[1];
-
-            foreach (var item in Ingredients)
-            {
-                if (item.Name == ingredient)
-                {
-                    if (check) CheckedIngredients.Add(item);
-                    else CheckedIngredients.RemoveAt(CheckedIngredients.IndexOf(item));
-
-                    break;
-                }
-            }
+        private void OnSelectCompositionsViewCommandExecuted(object p)
+        {
+            CurrentView = CompositionsV;
+            OnPropertyChanged(nameof(CurrentView));
         }
 
         #endregion
 
-        #region CopyToClipBoardCommand
+        #region SelectNewsViewCommand
 
-        public ICommand CopyToClipBoardCommand { get; }
+        public ICommand SelectNewsViewCommand { get; }
 
-        private bool CanCopyToClipBoardCommandExecute(object p) => true;
-
-        private void OnCopyToClipBoardCommandExecuted(object p)
+        private bool CanSelectNewsViewCommandExecute(object p)
         {
-            var i = CheckedIngredients.OrderBy(x => x.Priority);
-
-            foreach (var item in i)
-            {
-                Result = Result + $"\n\n" + item.Description;
-            }
-
-            if (Result is not null) Clipboard.SetText(Result.Trim());
-
-            Result = string.Empty;
+            if (CurrentView is NewsView)
+                return false;
+            return true;
         }
 
-        #endregion
-
-        #region CloseAppCommand
-
-        public ICommand CloseAppCommand { get; }
-
-        private bool CanCloseAppCommandExecute(object p) => true;
-
-        private void OnCloseAppCommandExecuted(object p) => Application.Current.Shutdown();
+        private void OnSelectNewsViewCommandExecuted(object p)
+        {
+            CurrentView = NewsV;
+            OnPropertyChanged(nameof(CurrentView));
+        }
 
         #endregion
 
         public MainViewModel()
-        { 
-            AddIngredientCommand = new LambdaCommand(OnAddIngredientCommandExecuted, CanAddIngredientCommandExecute);
-            CopyToClipBoardCommand = new LambdaCommand(OnCopyToClipBoardCommandExecuted, CanCopyToClipBoardCommandExecute);
-            CloseAppCommand = new LambdaCommand(OnCloseAppCommandExecuted, CanCloseAppCommandExecute);
+        {
+            SelectCompositionsViewCommand = new LambdaCommand(OnSelectCompositionsViewCommandExecuted, CanSelectCompositionsViewCommandExecute);
+            SelectNewsViewCommand = new LambdaCommand(OnSelectNewsViewCommandExecuted, CanSelectNewsViewCommandExecute);
 
-            Ingredients = GetData.GetListFromJson(Ingredients);
-            CheckedIngredients.Add(new IngredientModel
-            {
-                Name = string.Empty,
-                Description = string.Empty,
-                Priority = 100,
-            });
+            CompositionsV = new CompositionsView();
+            NewsV = new NewsView();
+
+            CurrentView = NewsV;
         }
     }
 }

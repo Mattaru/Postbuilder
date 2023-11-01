@@ -1,9 +1,10 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <SolidColorBrush Color="#252525" x:Key="BlackFontBrush"/>
     <SolidColorBrush Color="#FFBC9468" x:Key="PrimariBrush"/>
     <SolidColorBrush Color="Pink" x:Key="SecondaryBrush"/>
     <SolidColorBrush Color="#FF231B0E" x:Key="SupportingBrush"/>
-    <SolidColorBrush Color="#252525" x:Key="BlackFontBrush"/>
+    <SolidColorBrush Color="Transparent" x:Key="TransparentBrush"/>
 
 </ResourceDictionary>
