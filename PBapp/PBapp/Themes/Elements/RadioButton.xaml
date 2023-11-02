@@ -19,17 +19,9 @@
                               Height="50">
 
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="70"/>
+                                <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-
-                            <ContentPresenter Grid.Column="2" Focusable="False"
-                                            Content="{TemplateBinding Tag}"
-                                            HorizontalAlignment="Left"
-                                            Margin="{TemplateBinding Padding}"
-                                            RecognizesAccessKey="True"
-                                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
 
                             <Border Grid.Column="0"
                                     x:Name="IsChecedBorder"
@@ -40,6 +32,13 @@
                                     CornerRadius="0,4,4,0"
                                     Width="8"
                                     Visibility="Hidden"/>
+                            
+                            <ContentPresenter Grid.Column="1" Focusable="False"
+                                              Content="{TemplateBinding Tag}"
+                                              Margin="{TemplateBinding Padding}"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
 
                         </Grid>
 

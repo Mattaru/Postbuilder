@@ -82,7 +82,7 @@ namespace PBapp.MVVM.ViewModels
             CompositionsV = new CompositionsView();
             NewsV = new NewsView();
 
-            CurrentView = NewsV;
+            CurrentView = CompositionsV;
         }
     }
 }

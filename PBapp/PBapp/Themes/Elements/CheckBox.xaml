@@ -4,6 +4,7 @@
     <Style BasedOn="{StaticResource {x:Type ToggleButton}}" TargetType="{x:Type CheckBox}" x:Key="CheckBox_castom">
 
         <Style.Setters>
+            <Setter Property="Margin" Value="2,0"/>
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="FontWeight" Value="Bold"/>
@@ -35,10 +36,11 @@
                                     x:Name="IsChecedBorder"
                                     HorizontalAlignment="Left" VerticalAlignment="Stretch"
                                     BorderBrush="{StaticResource SecondaryBrush}"
-                                    Height="50"
-                                    BorderThickness="0,0,8,0"
-                                    CornerRadius="0,4,4,0"
-                                    Width="8"
+                                    Height="10"
+                                    Width="10"
+                                    Margin="15,0,0,0"
+                                    BorderThickness="5"
+                                    CornerRadius="5"
                                     Opacity="0.6"
                                     Visibility="Hidden"/>
 

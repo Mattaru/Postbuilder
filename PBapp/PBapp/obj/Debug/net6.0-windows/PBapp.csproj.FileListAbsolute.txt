@@ -33,8 +33,6 @@ D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\MVVM\Views\Ne
 D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\MVVM\Views\CompositionsView.baml
 D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\MVVM\Views\NewsView.baml
 D:\C#\GITProjects\Postbuilder\PBapp\PBapp\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
-D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\Infrastructure\Components\NavigationMenu.g.cs
-D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\Infrastructure\Components\NavigationMenu.baml
 D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\Infrastructure\Components\NavigationButton.g.cs
 D:\C#\GITProjects\Postbuilder\PBapp\PBapp\bin\Debug\net6.0-windows\FontAwesome5.Net.dll
 D:\C#\GITProjects\Postbuilder\PBapp\PBapp\bin\Debug\net6.0-windows\FontAwesome5.dll
@@ -46,3 +44,4 @@ D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\Themes\Elemen
 D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\Infrastructure\Components\LoadingSpinner.g.cs
 D:\C#\GITProjects\Postbuilder\PBapp\PBapp\bin\Debug\net6.0-windows\HtmlAgilityPack.dll
 D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\Infrastructure\Components\LoadingSpinner.baml
+D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Debug\net6.0-windows\Themes\Elements\ToolbarButton.baml

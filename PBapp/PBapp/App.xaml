@@ -13,6 +13,7 @@
                 <ResourceDictionary Source="./Themes/Elements/NavigationRadioButton.xaml"/>
                 <ResourceDictionary Source="./Themes/Elements/RadioButton.xaml"/>
                 <ResourceDictionary Source="./Themes/Elements/ResourceButton.xaml"/>
+                <ResourceDictionary Source="./Themes/Elements/ToolbarButton.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
         </ResourceDictionary>

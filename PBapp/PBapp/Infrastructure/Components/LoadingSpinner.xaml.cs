@@ -144,9 +144,6 @@ namespace PBapp.Infrastructure.Components
 
         #endregion
 
-        public LoadingSpinner()
-        {
-            InitializeComponent();
-        }
+        public LoadingSpinner() => InitializeComponent();
     }
 }

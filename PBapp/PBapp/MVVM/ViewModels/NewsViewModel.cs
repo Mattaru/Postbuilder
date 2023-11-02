@@ -10,14 +10,6 @@ namespace PBapp.MVVM.ViewModels
 {
     internal class NewsViewModel : ObservableObject
     {
-        #region Main window Title
-
-        private string _title = "Corean news";
-
-        public string Title { get => _title; set => Set(ref _title, value); }
-
-        #endregion
-
         #region ParcingSources
 
         public string Sum37 { get => Sources.SUM37; }

@@ -7,8 +7,8 @@
              xmlns:local="clr-namespace:PBapp.Infrastructure.Components"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    
-    <Grid>
+
+    <Grid DataContext="{Binding RelativeSource={RelativeSource Self}}">
         <Path Stroke="Transparent"
               StrokeThickness=".1"
               RenderTransformOrigin=".5,.5"
@@ -43,7 +43,7 @@
                     <BeginStoryboard>
                         <Storyboard>
                             <DoubleAnimation Storyboard.TargetProperty="(Rectangle.RenderTransform).(RotateTransform.Angle)"
-                                             To="360" Duration="0:0:1"
+                                             To="360" Duration="0:0:3"
                                              RepeatBehavior="Forever" />
                         </Storyboard>
                     </BeginStoryboard>

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\C#\GITProjects\Postbuilder\PBapp\PBapp\App.xaml
-121350316683
+121221039858
 11451225726
-28-1111513402
+27336293365
 200-635949903
-Infrastructure\Components\LoadingSpinner.xaml;Infrastructure\Components\NavigationButton.xaml;Infrastructure\Components\NavigationMenu.xaml;MVVM\Views\CompositionsView.xaml;MVVM\Views\NewsView.xaml;MVVM\Views\Windows\MainWindow.xaml;Themes\Basic\Brushes.xaml;Themes\Elements\CheckBox.xaml;Themes\Elements\Hyperlink.xaml;Themes\Elements\NavigationRadioButton.xaml;Themes\Elements\RadioButton.xaml;Themes\Elements\ResourceButton.xaml;
+Infrastructure\Components\LoadingSpinner.xaml;Infrastructure\Components\NavigationButton.xaml;MVVM\Views\CompositionsView.xaml;MVVM\Views\NewsView.xaml;MVVM\Views\Windows\MainWindow.xaml;Themes\Basic\Brushes.xaml;Themes\Elements\CheckBox.xaml;Themes\Elements\Hyperlink.xaml;Themes\Elements\NavigationRadioButton.xaml;Themes\Elements\RadioButton.xaml;Themes\Elements\ResourceButton.xaml;Themes\Elements\ToolbarButton.xaml;
 
 False
 
