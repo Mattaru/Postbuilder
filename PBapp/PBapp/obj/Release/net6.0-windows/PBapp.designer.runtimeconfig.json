@@ -12,9 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\NarMattaru\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\NarMattaru\\.nuget\\packages",
-      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      "C:\\Users\\Nar\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Nar\\.nuget\\packages"
     ],
     "configProperties": {
       "System.Reflection.Metadata.MetadataUpdater.IsSupported": false,

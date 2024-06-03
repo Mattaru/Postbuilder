@@ -42,7 +42,7 @@
         </Grid.Effect>
         
         <Grid.Background>
-            <ImageBrush ImageSource="/Imgs/teddy-bear.jpg"/>
+            <ImageBrush ImageSource="/imgs/bears.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
 
         <Grid.RowDefinitions>
@@ -93,7 +93,8 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Column="0">
+            <StackPanel Grid.Column="0"
+                        Background="Black">
                 <components:NavigationButton IsChecked="True"
                                              Icon="Solid_Home"
                                              Command="{Binding SelectCompositionsViewCommand}"/>

@@ -110,7 +110,13 @@
         <Grid Grid.Column="1"
               HorizontalAlignment="Stretch">
 
-            <Border HorizontalAlignment="Stretch"
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="25"/>
+            </Grid.RowDefinitions>
+            
+            <Border Grid.Row="0"
+                    HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
                     Visibility="{Binding SpinnerVisibility}">
 
@@ -120,7 +126,8 @@
 
             </Border>
 
-            <ListBox Background="Transparent"
+            <ListBox Grid.Row="0"
+                     Background="Transparent"
                      ItemsSource="{Binding SelectedSource.News}"
                      SelectedIndex="0"
                      ScrollViewer.VerticalScrollBarVisibility="Visible"
@@ -215,6 +222,8 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
+
+            <Border Grid.Row="1" Background="Transparent"/>
 
         </Grid>
     </Grid>

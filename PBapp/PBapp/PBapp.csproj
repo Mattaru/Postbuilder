@@ -10,6 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Imgs\bears.jpg" />
+    <None Remove="Imgs\flowers.jpg" />
     <None Remove="Imgs\teddy-bear.jpg" />
   </ItemGroup>
 
@@ -18,6 +20,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Imgs\bears.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Imgs\flowers.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Imgs\teddy-bear.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
 using System.Windows;
+using System.Diagnostics.Eventing.Reader;
 
 namespace PBapp.MVVM.ViewModels
 {
@@ -35,11 +36,27 @@ namespace PBapp.MVVM.ViewModels
 
         #endregion
 
-        #region Result
+        #region CheckedTags
 
-        private string? _result;
+        private List<string> _checkedTags = new List<string>();
 
-        public string? Result { get => _result; set => Set(ref _result, value); }
+        public List<string> CheckedTags { get => _checkedTags; set => Set(ref _checkedTags, value); }
+
+        #endregion
+
+        #region IngredientsResult
+
+        private string? _ingredientsResult;
+
+        public string? IngredientsResult { get => _ingredientsResult; set => Set(ref _ingredientsResult, value); }
+
+        #endregion
+
+        #region TagsResult
+
+        private string? _tagsResult;
+
+        public string? TagsResult { get => _tagsResult; set => Set(ref _tagsResult, value); }
 
         #endregion
 
@@ -53,11 +70,11 @@ namespace PBapp.MVVM.ViewModels
 
         private void OnAddIngredientCommandExecuted(object p)
         {
-            var values = (object[])p;
+            var props = (object[])p;
 
-            string ingredient = (string)values[0];
+            string ingredient = (string)props[0];
 
-            bool check = (bool)values[1];
+            bool check = (bool)props[1];
 
             foreach (var item in Ingredients)
             {
@@ -69,28 +86,51 @@ namespace PBapp.MVVM.ViewModels
                     break;
                 }
             }
+
+            foreach (var item in CheckedIngredients.OrderBy(x => x.Priority))
+            {
+                IngredientsResult = IngredientsResult + $"\n\n" + item.Description;
+            }
+
+            if (Ingredients is not null)
+            {
+                Clipboard.SetText(IngredientsResult?.Trim());
+                IngredientsResult = string.Empty;
+            }
         }
 
         #endregion
 
-        #region CopyToClipBoardCommand
+        #region AddTagCommand
 
-        public ICommand CopyToClipBoardCommand { get; }
+        public ICommand AddTagCommand { get; }
 
-        private bool CanCopyToClipBoardCommandExecute(object p) => true;
+        private bool CanAddTagCommandExecute(object p) => true;
 
-        private void OnCopyToClipBoardCommandExecuted(object p)
+        private void OnAddTagCommandExecuted(object p)
         {
-            var i = CheckedIngredients.OrderBy(x => x.Priority);
+            var props = ((object[])p);
+            string tag = (string)props[0];
+            bool check = (bool)props[1];
 
-            foreach (var item in i)
+            if (check && tag == Tags.ABBDISCLAIMER) CheckedTags.Add(Tags.DISCLAIMER);
+            else if (check) CheckedTags.Add(tag);
+            else
             {
-                Result = Result + $"\n\n" + item.Description;
+                if (tag == Tags.ABBDISCLAIMER) CheckedTags.RemoveAt(CheckedTags.IndexOf(Tags.DISCLAIMER));
+                else CheckedTags.RemoveAt(CheckedTags.IndexOf(tag));
             }
 
-            if (Result is not null) Clipboard.SetText(Result.Trim());
+            foreach (var item in CheckedTags)
+            {
+                TagsResult = TagsResult + " " + item;
+            }
 
-            Result = string.Empty;
+            if (TagsResult is not null)
+            {
+                Clipboard.SetText(TagsResult?.Trim());
+                TagsResult = string.Empty;
+            }
         }
 
         #endregion
@@ -98,7 +138,7 @@ namespace PBapp.MVVM.ViewModels
         public CompositionsViewModel()
         {
             AddIngredientCommand = new LambdaCommand(OnAddIngredientCommandExecuted, CanAddIngredientCommandExecute);
-            CopyToClipBoardCommand = new LambdaCommand(OnCopyToClipBoardCommandExecuted, CanCopyToClipBoardCommandExecute);
+            AddTagCommand = new LambdaCommand(OnAddTagCommandExecuted, CanAddTagCommandExecute);
 
             Ingredients = GetData.GetListFromJson(Ingredients);
             CheckedIngredients.Add(new IngredientModel
@@ -107,6 +147,13 @@ namespace PBapp.MVVM.ViewModels
                 Description = string.Empty,
                 Priority = 100,
             });
+            CheckedTags.Add(string.Empty);
+        }
+
+        private void CopyResultsToClipboard()
+        {
+             
+            
         }
     }
 }

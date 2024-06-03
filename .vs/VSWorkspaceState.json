@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\PBapp",
+    "\\PBapp\\PBapp",
+    "\\PBapp\\PBapp\\Infrastructure",
+    "\\PBapp\\PBapp\\Infrastructure\\Converters",
+    "\\PBapp\\PBapp\\MVVM",
+    "\\PBapp\\PBapp\\MVVM\\ViewModels",
+    "\\PBapp\\PBapp\\MVVM\\Views",
+    "\\PBapp\\PBapp\\MVVM\\Views\\Windows"
+  ],
+  "SelectedNode": "\\PBapp\\PBapp\\MVVM\\Views\\CompositionsView.xaml",
+  "PreviewInSolutionExplorer": false
+}

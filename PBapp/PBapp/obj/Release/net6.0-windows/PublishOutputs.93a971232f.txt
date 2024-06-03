@@ -1,0 +1,12 @@
+D:\C#\ReleaseBuilds\PB\Data\ingredients.json
+D:\C#\ReleaseBuilds\PB\PBapp.exe
+D:\C#\ReleaseBuilds\PB\PBapp.dll
+D:\C#\ReleaseBuilds\PB\PBapp.deps.json
+D:\C#\ReleaseBuilds\PB\PBapp.runtimeconfig.json
+D:\C#\ReleaseBuilds\PB\PBapp.pdb
+D:\C#\ReleaseBuilds\PB\FontAwesome5.Net.dll
+D:\C#\ReleaseBuilds\PB\FontAwesome5.dll
+D:\C#\ReleaseBuilds\PB\HtmlAgilityPack.dll
+D:\C#\ReleaseBuilds\PB\Microsoft.Xaml.Behaviors.dll
+D:\C#\ReleaseBuilds\PB\Newtonsoft.Json.dll
+D:\C#\ReleaseBuilds\PB\ShutterPrism.MVC.FontAwesome.dll

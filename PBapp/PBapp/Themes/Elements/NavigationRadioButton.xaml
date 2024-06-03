@@ -28,7 +28,7 @@
                             <fa:ImageAwesome Grid.Column="0" Icon="{Binding Icon, RelativeSource={RelativeSource AncestorType=components:NavigationButton}}"
                                              x:Name="faIcon"
                                              HorizontalAlignment="Right"
-                                             Foreground="{StaticResource BlackFontBrush}"
+                                             Foreground="White"
                                              Height="20"
                                              Margin="0,0,10,0"/>
                             

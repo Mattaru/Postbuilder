@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\C#\GITProjects\Postbuilder\PBapp\PBapp\obj\Release\net6.0-windows\
+D:\C#\PostBuilder\PBapp\PBapp\obj\Release\net6.0-windows\
 PBapp
 none
 false
 TRACE;RELEASE;NET;NET6_0;NETCOREAPP
-D:\C#\GITProjects\Postbuilder\PBapp\PBapp\App.xaml
-4-853158186
+D:\C#\PostBuilder\PBapp\PBapp\App.xaml
+13-940921081
 11451225726
-121386898064
-195-1503157712
-MVVM\Views\MainWindow.xaml;Themes\Basic\Brushes.xaml;Themes\Elements\CheckBox.xaml;Themes\Elements\RadioButton.xaml;
+30554633800
+200-1361059705
+Infrastructure\Components\LoadingSpinner.xaml;Infrastructure\Components\NavigationButton.xaml;MVVM\Views\CompositionsView.xaml;MVVM\Views\NewsView.xaml;MVVM\Views\Windows\MainWindow.xaml;Themes\Basic\Brushes.xaml;Themes\Elements\CheckBox.xaml;Themes\Elements\Hyperlink.xaml;Themes\Elements\NavigationRadioButton.xaml;Themes\Elements\RadioButton.xaml;Themes\Elements\ResourceButton.xaml;Themes\Elements\TagCheckBox.xaml;Themes\Elements\ToolbarButton.xaml;
 
 True
 
