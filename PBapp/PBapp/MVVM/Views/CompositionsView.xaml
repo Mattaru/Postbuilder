@@ -348,15 +348,29 @@
 
                     </CheckBox>
 
-                    <CheckBox Tag="....."
-                            Name="Ing21"
-                            Style="{StaticResource CheckBox_castom}"
-                            Command="{Binding AddIngredientCommand}">
+                    <CheckBox Tag="Альфа-бисоболол"
+                              Name="Ing21"
+                              Style="{StaticResource CheckBox_castom}"
+                              Command="{Binding AddIngredientCommand}">
 
                         <CheckBox.CommandParameter>
                             <MultiBinding Converter="{StaticResource cv}">
                                 <Binding ElementName="Ing21" Path="Tag"/>
                                 <Binding ElementName="Ing21" Path="IsChecked"/>
+                            </MultiBinding>
+                        </CheckBox.CommandParameter>
+
+                    </CheckBox>
+
+                    <CheckBox Tag="....."
+                              Name="Ing22"
+                              Style="{StaticResource CheckBox_castom}"
+                              Command="{Binding AddIngredientCommand}">
+
+                        <CheckBox.CommandParameter>
+                            <MultiBinding Converter="{StaticResource cv}">
+                                <Binding ElementName="Ing22" Path="Tag"/>
+                                <Binding ElementName="Ing22" Path="IsChecked"/>
                             </MultiBinding>
                         </CheckBox.CommandParameter>
 
@@ -420,7 +434,7 @@
 
                         </CheckBox>
 
-                        <CheckBox Tag="#thehistoyofwhoo"
+                        <CheckBox Tag="#thehistoryofwhoo"
                                   Name="Tag2"
                                   Style="{StaticResource TagCheckBox_castom}"
                                   Command="{Binding AddTagCommand}">
