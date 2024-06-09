@@ -1,11 +1,7 @@
 ﻿using PBapp.Core;
 using PBapp.Data;
-using System;
+using PBapp.MVVM.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media.Animation;
 
 namespace PBapp.Services
 {
@@ -19,6 +15,14 @@ namespace PBapp.Services
 
         #endregion
 
+        #region Tags
+
+        private List<TagModel> _tags;
+
+        public List<TagModel> Tags { get => _tags; set => Set(ref _tags, value); }
+
+        #endregion
+
         #region TagsString
 
         private string? _tagsString;
@@ -27,8 +31,12 @@ namespace PBapp.Services
 
         #endregion
 
+        public const string DISCLAIMER = "Contains affiliate links . As a customer, you do not pay any more or less because of an affiliated link.\r\nA small percentage of the sale will go to the person who generated the link.";
+        public const string ABBDISCLAIMER = "#DISCLAIMER";
+
         public TagsManager() 
         {
+            Tags = GetData.GetListFromJson(Tags, GetData.TAGSPATH);
             CheckedTags.Add(string.Empty);
         }
 
@@ -42,11 +50,11 @@ namespace PBapp.Services
         }
         public void AddToCheckedIfActive(string tagName, bool check)
         {
-            if (check && tagName == Tags.ABBDISCLAIMER) AddToCheckedTags(Tags.DISCLAIMER);
+            if (check && tagName == ABBDISCLAIMER) AddToCheckedTags(DISCLAIMER);
             else if (check) AddToCheckedTags(tagName);
             else
             {
-                if (tagName == Tags.ABBDISCLAIMER) RemoveFromCheckedTags(Tags.DISCLAIMER);
+                if (tagName == ABBDISCLAIMER) RemoveFromCheckedTags(DISCLAIMER);
                 else RemoveFromCheckedTags(tagName);
             }
         }

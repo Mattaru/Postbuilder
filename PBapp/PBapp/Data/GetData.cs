@@ -1,20 +1,20 @@
 ﻿using Newtonsoft.Json;
-using PBapp.MVVM.Models;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
 namespace PBapp.Data
 {
     internal class GetData
     {
-        public static List<IngredientModel> GetListFromJson<IngredientModel>(List<IngredientModel> list)
+        public const string INGREDIENTSPATH = "./Data/ingredients.json";
+        public const string TAGSPATH = "./Data/tags.json";
+
+        public static List<T> GetListFromJson<T>(List<T> list, string jsonPath)
         {
-            using (StreamReader r = new StreamReader("Data/ingredients.json"))
+            using (StreamReader r = new StreamReader(jsonPath))
             {
                 string json = r.ReadToEnd();
-                list = JsonConvert.DeserializeObject<List<IngredientModel>>(json);
+                list = JsonConvert.DeserializeObject<List<T>>(json);
             }
 
             return list;

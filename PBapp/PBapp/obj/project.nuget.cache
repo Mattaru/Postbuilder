@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TSvb2cv5hYU=",
+  "dgSpecHash": "q7w/xHHBBHY=",
   "success": true,
-  "projectFilePath": "D:\\C#\\PostBuilder\\PBapp\\PBapp\\PBapp.csproj",
+  "projectFilePath": "D:\\C#\\PB\\Postbuilder\\PBapp\\PBapp\\PBapp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nar\\.nuget\\packages\\font-awesome\\4.3.0\\font-awesome.4.3.0.nupkg.sha512",
     "C:\\Users\\Nar\\.nuget\\packages\\fontawesome5\\2.1.11\\fontawesome5.2.1.11.nupkg.sha512",

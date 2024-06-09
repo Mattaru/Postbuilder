@@ -10,7 +10,7 @@ namespace PBapp.Services
     {
         #region Ingredients
 
-        private List<IngredientModel> _ingredients = new();
+        private List<IngredientModel> _ingredients;
 
         public List<IngredientModel> Ingredients { get => _ingredients; set => Set(ref _ingredients, value); }
 
@@ -34,7 +34,7 @@ namespace PBapp.Services
 
         public IngredientsManager() 
         {
-            Ingredients = GetData.GetListFromJson(Ingredients);
+            Ingredients = GetData.GetListFromJson(Ingredients, GetData.INGREDIENTSPATH);
             CheckedIngredients.Add(new IngredientModel
             {
                 Name = string.Empty,

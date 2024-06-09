@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C#\\PostBuilder\\PBapp\\PBapp\\PBapp.csproj": {}
+    "D:\\C#\\PB\\Postbuilder\\PBapp\\PBapp\\PBapp.csproj": {}
   },
   "projects": {
-    "D:\\C#\\PostBuilder\\PBapp\\PBapp\\PBapp.csproj": {
+    "D:\\C#\\PB\\Postbuilder\\PBapp\\PBapp\\PBapp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#\\PostBuilder\\PBapp\\PBapp\\PBapp.csproj",
+        "projectUniqueName": "D:\\C#\\PB\\Postbuilder\\PBapp\\PBapp\\PBapp.csproj",
         "projectName": "PBapp",
-        "projectPath": "D:\\C#\\PostBuilder\\PBapp\\PBapp\\PBapp.csproj",
+        "projectPath": "D:\\C#\\PB\\Postbuilder\\PBapp\\PBapp\\PBapp.csproj",
         "packagesPath": "C:\\Users\\Nar\\.nuget\\packages\\",
-        "outputPath": "D:\\C#\\PostBuilder\\PBapp\\PBapp\\obj\\",
+        "outputPath": "D:\\C#\\PB\\Postbuilder\\PBapp\\PBapp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nar\\AppData\\Roaming\\NuGet\\NuGet.Config",
