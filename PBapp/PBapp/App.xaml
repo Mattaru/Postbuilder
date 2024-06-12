@@ -7,6 +7,7 @@
         <ResourceDictionary>
 
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./Themes/Elements/ActionButton.xaml"/>
                 <ResourceDictionary Source="./Themes/Basic/Brushes.xaml"/>
                 <ResourceDictionary Source="./Themes/Elements/CheckBox.xaml"/>
                 <ResourceDictionary Source="./Themes/Elements/Hyperlink.xaml"/>
@@ -14,6 +15,7 @@
                 <ResourceDictionary Source="./Themes/Elements/RadioButton.xaml"/>
                 <ResourceDictionary Source="./Themes/Elements/ResourceButton.xaml"/>
                 <ResourceDictionary Source="./Themes/Elements/TagCheckBox.xaml"/>
+                <ResourceDictionary Source="./Themes/Elements/TextField.xaml"/>
                 <ResourceDictionary Source="./Themes/Elements/ToolbarButton.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 

@@ -1,12 +1,31 @@
 ﻿using PBapp.Core;
 using PBapp.Infrastructure.Commands;
 using PBapp.Services;
+using System;
+using System.Windows;
+using System.Windows.Documents;
 using System.Windows.Input;
 
 namespace PBapp.MVVM.ViewModels
 {
     internal class CompositionsViewModel : ObservableObject
     {
+        #region AddIngredientFormVisibility
+
+        private string _addIngredientFormVisibility;
+
+        public string AddIngredientFormVisibility { get => _addIngredientFormVisibility; set => Set(ref _addIngredientFormVisibility, value); }
+
+        #endregion
+
+        #region CompositionMainGridVisibility
+
+        private string _compositionMainGridVisibility;
+
+        public string CompositionMainGridVisibility { get => _compositionMainGridVisibility; set => Set(ref _compositionMainGridVisibility, value); }
+
+        #endregion
+
         #region CBManager
 
         private ClipboardManager? _cbManager;
@@ -31,7 +50,36 @@ namespace PBapp.MVVM.ViewModels
 
         #endregion
 
+        #region SelectedPriority
+
+        private int _selectedPriority;
+
+        public int SelectedPriority { get => _selectedPriority; set => Set(ref _selectedPriority, value); }
+
+        #endregion
+
         // Commands
+
+        #region AddNewIngredientCommand
+
+        public ICommand AddNewIngredientCommand { get; }
+
+        private bool CanAddNewIngredientCommandExecute(object p) => true;
+
+        private void OnAddNewIngredientCommandExecuted(object p)
+        {
+            var props = (object[])p;
+            string name = (string)props[0];
+            string description = (string)props[1];
+            string visibility = props[2].ToString();
+            int priority = SelectedPriority;
+
+            if (visibility == "Visible") HideForm();
+
+            IManager.AddNewIngredient(name, description, priority);
+        }
+
+        #endregion
 
         #region AddIngredientCommand
 
@@ -42,10 +90,10 @@ namespace PBapp.MVVM.ViewModels
         private void OnAddIngredientCommandExecuted(object p)
         {
             var props = (object[])p;
-            string ingredient = (string)props[0];
+            string ingName = (string)props[0];
             bool check = (bool)props[1];
 
-            IManager.AddToCheckedIfActive(ingredient,check);
+            IManager.AddToCheckedIfActive(ingName, check);
             IManager.MakeIngredientsString();
             CBManager.CopyIngredients(IManager.IngredientsString);
             IManager.IngredientsString = string.Empty;
@@ -73,14 +121,83 @@ namespace PBapp.MVVM.ViewModels
 
         #endregion
 
+        #region BackToIngredientsCommand
+
+        public ICommand BackToIngredientsCommand { get; }
+
+        private bool CanBackToIngredientsCommandExecute(object p) => true;
+
+        private void OnBackToIngredientsCommandExecuted(object p)
+        {
+            var visibility = p.ToString();
+
+            if (visibility == "Visible") HideForm();
+        }
+
+        #endregion
+
+        #region OpenIngredientFormCommand
+
+        public ICommand OpenIngredientFormCommand { get; }
+
+        private bool CanOpenIngredientFormCommandExecute(object p) => true;
+
+        private void OnOpenIngredientFormCommandExecuted(object p)
+        {
+            if (p.ToString() == "Visible") ShowForm();
+        }
+
+        #endregion
+
+        #region RemoveIngredientCommand
+
+        public ICommand RemoveIngredientCommand { get; }
+
+        private bool CanRemoveIngredientCommandExecute(Object p) => true;
+
+        private void OnRemoveIngredientCommandExecuted(Object p)
+        {
+            var props = (object[])p;
+            string name = (string)props[0];
+            bool check = (bool)props[1];
+
+            if (check) IManager.RemoveIngredient(name);
+        }
+
+        #endregion
+
+     
+
         public CompositionsViewModel()
         {
+            AddNewIngredientCommand = new LambdaCommand(OnAddNewIngredientCommandExecuted, CanAddNewIngredientCommandExecute);
             AddIngredientCommand = new LambdaCommand(OnAddIngredientCommandExecuted, CanAddIngredientCommandExecute);
             AddTagCommand = new LambdaCommand(OnAddTagCommandExecuted, CanAddTagCommandExecute);
+            BackToIngredientsCommand = new LambdaCommand(OnBackToIngredientsCommandExecuted, CanBackToIngredientsCommandExecute);
+            OpenIngredientFormCommand = new LambdaCommand(OnOpenIngredientFormCommandExecuted, CanOpenIngredientFormCommandExecute);
+            RemoveIngredientCommand = new LambdaCommand(OnRemoveIngredientCommandExecuted, CanRemoveIngredientCommandExecute);
 
             CBManager = new ClipboardManager();
             IManager = new IngredientsManager();
             TManager = new TagsManager();
+
+            _addIngredientFormVisibility = "Collapsed";
+            _compositionMainGridVisibility = "Visible";
+        }
+
+        private void ShowForm()
+        {
+            CompositionMainGridVisibility = "Collapsed";
+            OnPropertyChanged(nameof(CompositionMainGridVisibility));
+            AddIngredientFormVisibility = "Visible";
+            OnPropertyChanged(nameof(AddIngredientFormVisibility));
+        }
+        private void HideForm()
+        {
+            CompositionMainGridVisibility = "Visible";
+            OnPropertyChanged(nameof(CompositionMainGridVisibility));
+            AddIngredientFormVisibility = "Collapsed";
+            OnPropertyChanged(nameof(AddIngredientFormVisibility));
         }
     }
 }

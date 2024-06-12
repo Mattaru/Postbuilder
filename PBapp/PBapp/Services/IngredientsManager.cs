@@ -2,7 +2,9 @@
 using PBapp.Data;
 using PBapp.MVVM.Models;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Xml.Linq;
 
 namespace PBapp.Services
 {
@@ -10,9 +12,9 @@ namespace PBapp.Services
     {
         #region Ingredients
 
-        private List<IngredientModel> _ingredients;
+        private ObservableCollection<IngredientModel> _ingredients;
 
-        public List<IngredientModel> Ingredients { get => _ingredients; set => Set(ref _ingredients, value); }
+        public ObservableCollection<IngredientModel> Ingredients { get => _ingredients; set => Set(ref _ingredients, value); }
 
         #endregion
 
@@ -26,9 +28,9 @@ namespace PBapp.Services
 
         #region CheckedIngredients
 
-        private List<IngredientModel> _checkedIngredients = new();
+        private ObservableCollection<IngredientModel> _checkedIngredients = new();
 
-        public List<IngredientModel> CheckedIngredients { get => _checkedIngredients; set => Set(ref _checkedIngredients, value); }
+        public ObservableCollection<IngredientModel> CheckedIngredients { get => _checkedIngredients; set => Set(ref _checkedIngredients, value); }
 
         #endregion
 
@@ -49,14 +51,15 @@ namespace PBapp.Services
             return CheckedIngredients.OrderBy(x => x.Priority).ToList();
         }
 
+        public void AddNewIngredient(string name, string description, int priority)
+        {
+            Ingredients.Add(new IngredientModel { Name = name, Description = description, Priority = priority });
+            OnPropertyChanged(nameof(Ingredients));
+        }
+
         private void AddToCheckedIngredients(IngredientModel ingredientName)
         {
             CheckedIngredients.Add(ingredientName);
-        }
-
-        private void RemoveFromCheckedIngredients(IngredientModel ingredientName)
-        {
-            CheckedIngredients.RemoveAt(CheckedIngredients.IndexOf(ingredientName));
         }
 
         public void AddToCheckedIfActive(string ingredientName, bool check)
@@ -71,6 +74,26 @@ namespace PBapp.Services
                     break;
                 }
             }
+        }
+
+        public void RemoveIngredient(string ingredientName)
+        {
+            foreach (var item in Ingredients)
+            {
+                if (item.Name == ingredientName)
+                {
+                    Ingredients.Remove(item);
+                    OnPropertyChanged(nameof(Ingredients));
+                    break;
+                }
+                
+                
+            }
+        }
+
+        private void RemoveFromCheckedIngredients(IngredientModel ingredientName)
+        {
+            CheckedIngredients.RemoveAt(CheckedIngredients.IndexOf(ingredientName));
         }
 
         public void MakeIngredientsString()

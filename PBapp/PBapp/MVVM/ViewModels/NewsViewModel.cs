@@ -87,8 +87,16 @@ namespace PBapp.MVVM.ViewModels
         {
             await Task.Run(() =>
             {
-                if (NewsListVisibility != "Collapsed") NewsListVisibility = "Collapsed";
-                if (SpinnerVisibility != "Visible") SpinnerVisibility = "Visible";
+                if (NewsListVisibility != "Collapsed")
+                {
+                    NewsListVisibility = "Collapsed";
+                    OnPropertyChanged(nameof(NewsListVisibility));
+                }
+                if (SpinnerVisibility != "Visible")
+                {
+                    SpinnerVisibility = "Visible";
+                    OnPropertyChanged(nameof(SpinnerVisibility));
+                }
 
                 SelectedSource = HTTPRequest.GetSourceData(url);
                 OnPropertyChanged(nameof(SelectedSource));

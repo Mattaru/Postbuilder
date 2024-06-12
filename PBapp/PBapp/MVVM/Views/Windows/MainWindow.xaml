@@ -33,8 +33,6 @@
         <converter:ParamsConverter x:Key="cv"/>
     </Window.Resources>
 
-    
-
     <Grid>
         <Grid.Effect>
             <DropShadowEffect BlurRadius="15" Direction="-90"

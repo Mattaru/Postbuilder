@@ -2,6 +2,7 @@
 using PBapp.Data;
 using PBapp.MVVM.Models;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace PBapp.Services
 {
@@ -9,17 +10,17 @@ namespace PBapp.Services
     {
         #region CheckedTags
 
-        private List<string> _checkedTags = new();
+        private ObservableCollection<string> _checkedTags = new();
 
-        public List<string> CheckedTags { get => _checkedTags; set => Set(ref _checkedTags, value); }
+        public ObservableCollection<string> CheckedTags { get => _checkedTags; set => Set(ref _checkedTags, value); }
 
         #endregion
 
         #region Tags
 
-        private List<TagModel> _tags;
+        private ObservableCollection<TagModel> _tags;
 
-        public List<TagModel> Tags { get => _tags; set => Set(ref _tags, value); }
+        public ObservableCollection<TagModel> Tags { get => _tags; set => Set(ref _tags, value); }
 
         #endregion
 

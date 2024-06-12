@@ -41,6 +41,9 @@
     <Page Update="Themes\Basic\Brushes.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Themes\Elements\ActionButton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Themes\Elements\CheckBox.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -57,6 +60,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Themes\Elements\TagCheckBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Elements\TextField.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Themes\Elements\ToolbarButton.xaml">

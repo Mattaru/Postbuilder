@@ -6,5 +6,7 @@
     <SolidColorBrush Color="Pink" x:Key="SecondaryBrush"/>
     <SolidColorBrush Color="#FF231B0E" x:Key="SupportingBrush"/>
     <SolidColorBrush Color="Transparent" x:Key="TransparentBrush"/>
+    <SolidColorBrush Color="White" x:Key="White"/>
+    <SolidColorBrush Color="Green" x:Key="Green"/>
 
 </ResourceDictionary>
