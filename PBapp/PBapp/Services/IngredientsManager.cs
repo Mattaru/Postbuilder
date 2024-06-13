@@ -4,7 +4,6 @@ using PBapp.MVVM.Models;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Xml.Linq;
 
 namespace PBapp.Services
 {
@@ -51,10 +50,15 @@ namespace PBapp.Services
             return CheckedIngredients.OrderBy(x => x.Priority).ToList();
         }
 
-        public void AddNewIngredient(string name, string description, int priority)
+        public bool AddNewIngredient(string name, string description, int priority)
         {
-            Ingredients.Add(new IngredientModel { Name = name, Description = description, Priority = priority });
-            OnPropertyChanged(nameof(Ingredients));
+            if (CheckIngredient(name,description,priority))
+            {
+                Ingredients.Add(new IngredientModel { Name = name, Description = description, Priority = priority });
+                OnPropertyChanged(nameof(Ingredients));
+                return true;
+            }
+            return false;
         }
 
         private void AddToCheckedIngredients(IngredientModel ingredientName)
@@ -76,6 +80,30 @@ namespace PBapp.Services
             }
         }
 
+        private bool CheckIngredientName(string name)
+        {
+            if (name == string.Empty) return false;
+            return true;
+        }
+
+        private bool CheckIngredientDescription(string description)
+        {
+            if (description == string.Empty) return false;
+            return true;
+        }
+
+        private bool CheckIngredientPriority(int priority)
+        {
+            { if (priority < 0 || priority > 4) return false; }
+            return true;
+        }
+
+        private bool CheckIngredient(string name, string description, int priority)
+        {
+            if (CheckIngredientName(name) && CheckIngredientDescription(description) && CheckIngredientPriority(priority)) return true;
+            return false;
+        }
+
         public void RemoveIngredient(string ingredientName)
         {
             foreach (var item in Ingredients)
@@ -86,8 +114,6 @@ namespace PBapp.Services
                     OnPropertyChanged(nameof(Ingredients));
                     break;
                 }
-                
-                
             }
         }
 

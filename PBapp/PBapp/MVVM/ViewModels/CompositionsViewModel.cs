@@ -2,8 +2,6 @@
 using PBapp.Infrastructure.Commands;
 using PBapp.Services;
 using System;
-using System.Windows;
-using System.Windows.Documents;
 using System.Windows.Input;
 
 namespace PBapp.MVVM.ViewModels
@@ -18,11 +16,11 @@ namespace PBapp.MVVM.ViewModels
 
         #endregion
 
-        #region CompositionMainGridVisibility
+        #region MainGridVisibility
 
-        private string _compositionMainGridVisibility;
+        private string _mainGridVisibility;
 
-        public string CompositionMainGridVisibility { get => _compositionMainGridVisibility; set => Set(ref _compositionMainGridVisibility, value); }
+        public string MainGridVisibility { get => _mainGridVisibility; set => Set(ref _mainGridVisibility, value); }
 
         #endregion
 
@@ -39,14 +37,6 @@ namespace PBapp.MVVM.ViewModels
         private IngredientsManager? _iManager;
 
         public IngredientsManager? IManager { get => _iManager; set => Set(ref _iManager, value); }
-
-        #endregion
-
-        #region TManager
-
-        private TagsManager? _tManager;
-
-        public TagsManager? TManager { get => _tManager; set => Set(ref _tManager, value); }
 
         #endregion
 
@@ -74,9 +64,8 @@ namespace PBapp.MVVM.ViewModels
             string visibility = props[2].ToString();
             int priority = SelectedPriority;
 
-            if (visibility == "Visible") HideForm();
-
-            IManager.AddNewIngredient(name, description, priority);
+            bool added = IManager.AddNewIngredient(name, description, priority);
+            if (added && visibility == "Visible") HideForm();
         }
 
         #endregion
@@ -97,26 +86,6 @@ namespace PBapp.MVVM.ViewModels
             IManager.MakeIngredientsString();
             CBManager.CopyIngredients(IManager.IngredientsString);
             IManager.IngredientsString = string.Empty;
-        }
-
-        #endregion
-
-        #region AddTagCommand
-
-        public ICommand AddTagCommand { get; }
-
-        private bool CanAddTagCommandExecute(object p) => true;
-
-        private void OnAddTagCommandExecuted(object p)
-        {
-            var props = ((object[])p);
-            string tag = (string)props[0];
-            bool check = (bool)props[1];
-
-            TManager.AddToCheckedIfActive(tag,check);
-            TManager.MakeTagString();
-            CBManager.CopyTags(TManager.TagsString);
-            TManager.TagsString = string.Empty;
         }
 
         #endregion
@@ -172,30 +141,28 @@ namespace PBapp.MVVM.ViewModels
         {
             AddNewIngredientCommand = new LambdaCommand(OnAddNewIngredientCommandExecuted, CanAddNewIngredientCommandExecute);
             AddIngredientCommand = new LambdaCommand(OnAddIngredientCommandExecuted, CanAddIngredientCommandExecute);
-            AddTagCommand = new LambdaCommand(OnAddTagCommandExecuted, CanAddTagCommandExecute);
             BackToIngredientsCommand = new LambdaCommand(OnBackToIngredientsCommandExecuted, CanBackToIngredientsCommandExecute);
             OpenIngredientFormCommand = new LambdaCommand(OnOpenIngredientFormCommandExecuted, CanOpenIngredientFormCommandExecute);
             RemoveIngredientCommand = new LambdaCommand(OnRemoveIngredientCommandExecuted, CanRemoveIngredientCommandExecute);
 
             CBManager = new ClipboardManager();
             IManager = new IngredientsManager();
-            TManager = new TagsManager();
 
             _addIngredientFormVisibility = "Collapsed";
-            _compositionMainGridVisibility = "Visible";
+            _mainGridVisibility = "Visible";
         }
 
         private void ShowForm()
         {
-            CompositionMainGridVisibility = "Collapsed";
-            OnPropertyChanged(nameof(CompositionMainGridVisibility));
+            MainGridVisibility = "Collapsed";
+            OnPropertyChanged(nameof(MainGridVisibility));
             AddIngredientFormVisibility = "Visible";
             OnPropertyChanged(nameof(AddIngredientFormVisibility));
         }
         private void HideForm()
         {
-            CompositionMainGridVisibility = "Visible";
-            OnPropertyChanged(nameof(CompositionMainGridVisibility));
+            MainGridVisibility = "Visible";
+            OnPropertyChanged(nameof(MainGridVisibility));
             AddIngredientFormVisibility = "Collapsed";
             OnPropertyChanged(nameof(AddIngredientFormVisibility));
         }

@@ -95,9 +95,12 @@
             <StackPanel Grid.Column="0"
                         Background="Black">
                 <components:NavigationButton IsChecked="True"
-                                             Icon="Solid_Home"
+                                             Icon="Solid_List"
                                              Command="{Binding SelectCompositionsViewCommand}"/>
 
+                <components:NavigationButton Icon="Solid_Hashtag"
+                                             Command="{Binding SelectTagsViewCommand}"/>
+                
                 <components:NavigationButton Icon="Regular_Newspaper"
                                              Command="{Binding SelectNewsViewCommand}"/>
             </StackPanel>

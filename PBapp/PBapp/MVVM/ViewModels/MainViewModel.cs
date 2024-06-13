@@ -1,13 +1,7 @@
 ﻿using PBapp.Core;
-using PBapp.Data;
 using PBapp.Infrastructure.Commands;
-using PBapp.MVVM.Models;
 using System;
-using System.Collections.Generic;
 using PBapp.MVVM.Views;
-using System.Linq;
-using System.Windows;
-using System.Windows.Documents;
 using System.Windows.Input;
 
 namespace PBapp.MVVM.ViewModels
@@ -16,15 +10,9 @@ namespace PBapp.MVVM.ViewModels
     {
         private readonly NewsView? NewsV;
 
+        private readonly TagsView? TagsV;
+
         private readonly CompositionsView? CompositionsV;
-
-        #region Tittle
-
-        private string _title = "";
-
-        public string Title { get => _title; set => Set(ref _title, value); }
-
-        #endregion
 
         #region Current view
 
@@ -55,6 +43,25 @@ namespace PBapp.MVVM.ViewModels
 
         #endregion
 
+        #region SelectTagsViewCommand
+
+        public ICommand SelectTagsViewCommand { get; }
+
+        private bool CanSelectTagsViewCommandExecute(object p)
+        {
+            if (CurrentView is TagsView)
+                return false;
+            return true;
+        }
+
+        private void OnSelectTagsViewCommandExecuted(Object p)
+        {
+            CurrentView = TagsV;
+            OnPropertyChanged(nameof(CurrentView));
+        }
+
+        #endregion
+
         #region SelectNewsViewCommand
 
         public ICommand SelectNewsViewCommand { get; }
@@ -77,9 +84,11 @@ namespace PBapp.MVVM.ViewModels
         public MainViewModel()
         {
             SelectCompositionsViewCommand = new LambdaCommand(OnSelectCompositionsViewCommandExecuted, CanSelectCompositionsViewCommandExecute);
+            SelectTagsViewCommand = new LambdaCommand(OnSelectTagsViewCommandExecuted, CanSelectTagsViewCommandExecute);
             SelectNewsViewCommand = new LambdaCommand(OnSelectNewsViewCommandExecuted, CanSelectNewsViewCommandExecute);
 
             CompositionsV = new CompositionsView();
+            TagsV = new TagsView();
             NewsV = new NewsView();
 
             CurrentView = CompositionsV;

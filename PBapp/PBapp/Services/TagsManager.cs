@@ -1,7 +1,6 @@
 ﻿using PBapp.Core;
 using PBapp.Data;
 using PBapp.MVVM.Models;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace PBapp.Services
@@ -18,9 +17,9 @@ namespace PBapp.Services
 
         #region Tags
 
-        private ObservableCollection<TagModel> _tags;
+        private ObservableCollection<TagModel>? _tags;
 
-        public ObservableCollection<TagModel> Tags { get => _tags; set => Set(ref _tags, value); }
+        public ObservableCollection<TagModel>? Tags { get => _tags; set => Set(ref _tags, value); }
 
         #endregion
 
@@ -41,10 +40,41 @@ namespace PBapp.Services
             CheckedTags.Add(string.Empty);
         }
 
+        public bool AddNewTag(string name)
+        {
+            if (CheckTag(name))
+            {
+                Tags.Add(new TagModel() { Name = name });
+                OnPropertyChanged(nameof(Tags));
+                return true;
+            }
+            return false;
+        }
+
         private void AddToCheckedTags(string tagName)
         {
             CheckedTags.Add(tagName);
         }
+
+        private bool CheckTag(string name)
+        {
+            if (name[0].ToString() == "#") return true;
+            return false;
+        }
+
+        public void RemoveTag(string tagName)
+        {
+            foreach (var item in Tags)
+            {
+                if (item.Name == tagName)
+                {
+                    Tags.Remove(item);
+                    OnPropertyChanged(nameof(Tags));
+                    break;
+                }
+            }
+        }
+
         private void RemoveFromCheckedTags(string tagName)
         { 
             CheckedTags.RemoveAt(CheckedTags.IndexOf(tagName));
