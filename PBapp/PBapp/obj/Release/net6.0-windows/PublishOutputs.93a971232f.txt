@@ -1,4 +1,5 @@
 D:\C#\ReleaseBuilds\PB\Data\ingredients.json
+D:\C#\ReleaseBuilds\PB\Data\tags.json
 D:\C#\ReleaseBuilds\PB\PBapp.exe
 D:\C#\ReleaseBuilds\PB\PBapp.dll
 D:\C#\ReleaseBuilds\PB\PBapp.deps.json

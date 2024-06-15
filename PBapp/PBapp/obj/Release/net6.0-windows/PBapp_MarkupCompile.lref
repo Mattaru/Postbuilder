@@ -1,9 +1,10 @@
-﻿D:\C#\PostBuilder\PBapp\PBapp\obj\Release\net6.0-windows\GeneratedInternalTypeHelper.g.cs
-FD:\C#\PostBuilder\PBapp\PBapp\App.xaml;;
-FD:\C#\PostBuilder\PBapp\PBapp\Infrastructure\Components\LoadingSpinner.xaml;;
-FD:\C#\PostBuilder\PBapp\PBapp\Infrastructure\Components\NavigationButton.xaml;;
-FD:\C#\PostBuilder\PBapp\PBapp\MVVM\Views\CompositionsView.xaml;;
-FD:\C#\PostBuilder\PBapp\PBapp\MVVM\Views\NewsView.xaml;;
-FD:\C#\PostBuilder\PBapp\PBapp\MVVM\Views\Windows\MainWindow.xaml;;
-FD:\C#\PostBuilder\PBapp\PBapp\Themes\Elements\NavigationRadioButton.xaml;;
+﻿D:\C#\PB\Postbuilder\PBapp\PBapp\obj\Release\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+FD:\C#\PB\Postbuilder\PBapp\PBapp\App.xaml;;
+FD:\C#\PB\Postbuilder\PBapp\PBapp\Infrastructure\Components\LoadingSpinner.xaml;;
+FD:\C#\PB\Postbuilder\PBapp\PBapp\Infrastructure\Components\NavigationButton.xaml;;
+FD:\C#\PB\Postbuilder\PBapp\PBapp\MVVM\Views\CompositionsView.xaml;;
+FD:\C#\PB\Postbuilder\PBapp\PBapp\MVVM\Views\NewsView.xaml;;
+FD:\C#\PB\Postbuilder\PBapp\PBapp\MVVM\Views\TagsView.xaml;;
+FD:\C#\PB\Postbuilder\PBapp\PBapp\MVVM\Views\Windows\MainWindow.xaml;;
+FD:\C#\PB\Postbuilder\PBapp\PBapp\Themes\Elements\NavigationRadioButton.xaml;;
 

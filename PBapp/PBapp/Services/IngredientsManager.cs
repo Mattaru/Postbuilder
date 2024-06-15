@@ -56,6 +56,7 @@ namespace PBapp.Services
             {
                 Ingredients.Add(new IngredientModel { Name = name, Description = description, Priority = priority });
                 OnPropertyChanged(nameof(Ingredients));
+                GetData.WriteToJson(Ingredients, GetData.INGREDIENTSPATH);
                 return true;
             }
             return false;
@@ -112,6 +113,7 @@ namespace PBapp.Services
                 {
                     Ingredients.Remove(item);
                     OnPropertyChanged(nameof(Ingredients));
+                    GetData.WriteToJson(Ingredients, GetData.TAGSPATH);
                     break;
                 }
             }

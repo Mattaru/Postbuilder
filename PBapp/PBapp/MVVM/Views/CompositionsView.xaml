@@ -52,7 +52,7 @@
                         </ItemsControl.ItemsPanel>
 
                         <ItemsControl.ItemTemplate>
-                            <DataTemplate>
+                            <DataTemplate x:Name="IngItem">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition/>
@@ -82,6 +82,9 @@
                                             HorizontalAlignment="Right"
                                             VerticalAlignment="Top"
                                             Command="{Binding ElementName=IngList, Path=DataContext.RemoveIngredientCommand}">
+                                        <Button.DataContext>
+                                            <vm:CompositionsViewModel/>
+                                        </Button.DataContext>
                                         <Button.CommandParameter>
                                             <MultiBinding Converter="{StaticResource cv}">
                                                 <Binding ElementName="Ing" Path="Tag"/>

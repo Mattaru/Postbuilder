@@ -19,6 +19,11 @@ namespace PBapp.Data
 
             return list;
         }
+
+        public static void WriteToJson<T>(ObservableCollection<T> list, string jsonPath)
+        {
+            File.WriteAllText(jsonPath, JsonConvert.SerializeObject(list));
+        }
     }
 }
 

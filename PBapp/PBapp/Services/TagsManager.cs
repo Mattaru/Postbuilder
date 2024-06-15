@@ -46,6 +46,7 @@ namespace PBapp.Services
             {
                 Tags.Add(new TagModel() { Name = name });
                 OnPropertyChanged(nameof(Tags));
+                GetData.WriteToJson(Tags, GetData.TAGSPATH);
                 return true;
             }
             return false;
@@ -70,6 +71,7 @@ namespace PBapp.Services
                 {
                     Tags.Remove(item);
                     OnPropertyChanged(nameof(Tags));
+                    GetData.WriteToJson(Tags, GetData.TAGSPATH);
                     break;
                 }
             }

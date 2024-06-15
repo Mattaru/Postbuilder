@@ -10,17 +10,17 @@ namespace PBapp.MVVM.ViewModels
     {
         #region AddIngredientFormVisibility
 
-        private string _addIngredientFormVisibility;
+        private string? _addIngredientFormVisibility;
 
-        public string AddIngredientFormVisibility { get => _addIngredientFormVisibility; set => Set(ref _addIngredientFormVisibility, value); }
+        public string? AddIngredientFormVisibility { get => _addIngredientFormVisibility; set => Set(ref _addIngredientFormVisibility, value); }
 
         #endregion
 
         #region MainGridVisibility
 
-        private string _mainGridVisibility;
+        private string? _mainGridVisibility;
 
-        public string MainGridVisibility { get => _mainGridVisibility; set => Set(ref _mainGridVisibility, value); }
+        public string? MainGridVisibility { get => _mainGridVisibility; set => Set(ref _mainGridVisibility, value); }
 
         #endregion
 
@@ -65,7 +65,7 @@ namespace PBapp.MVVM.ViewModels
             int priority = SelectedPriority;
 
             bool added = IManager.AddNewIngredient(name, description, priority);
-            if (added && visibility == "Visible") HideForm();
+            if (added && visibility == "Visible") ShowForm();
         }
 
         #endregion
@@ -135,8 +135,6 @@ namespace PBapp.MVVM.ViewModels
 
         #endregion
 
-     
-
         public CompositionsViewModel()
         {
             AddNewIngredientCommand = new LambdaCommand(OnAddNewIngredientCommandExecuted, CanAddNewIngredientCommandExecute);
@@ -145,11 +143,11 @@ namespace PBapp.MVVM.ViewModels
             OpenIngredientFormCommand = new LambdaCommand(OnOpenIngredientFormCommandExecuted, CanOpenIngredientFormCommandExecute);
             RemoveIngredientCommand = new LambdaCommand(OnRemoveIngredientCommandExecuted, CanRemoveIngredientCommandExecute);
 
-            CBManager = new ClipboardManager();
-            IManager = new IngredientsManager();
+            CBManager = new();
+            IManager = new();
 
-            _addIngredientFormVisibility = "Collapsed";
-            _mainGridVisibility = "Visible";
+            AddIngredientFormVisibility = "Collapsed";
+            MainGridVisibility = "Visible";
         }
 
         private void ShowForm()
