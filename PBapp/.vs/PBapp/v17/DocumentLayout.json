@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "D:\\C#\\PB\\Postbuilder\\PBapp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0B9978A4-5224-46A1-8588-AAC8502AA2D8}|PBapp\\PBapp.csproj|d:\\c#\\pb\\postbuilder\\pbapp\\pbapp\\data\\getdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B9978A4-5224-46A1-8588-AAC8502AA2D8}|PBapp\\PBapp.csproj|solutionrelative:pbapp\\data\\getdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0B9978A4-5224-46A1-8588-AAC8502AA2D8}|PBapp\\PBapp.csproj|d:\\c#\\pb\\postbuilder\\pbapp\\pbapp\\mvvm\\viewmodels\\compositionsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B9978A4-5224-46A1-8588-AAC8502AA2D8}|PBapp\\PBapp.csproj|solutionrelative:pbapp\\mvvm\\viewmodels\\compositionsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B9978A4-5224-46A1-8588-AAC8502AA2D8}|PBapp\\PBapp.csproj|d:\\c#\\pb\\postbuilder\\pbapp\\pbapp\\mvvm\\views\\compositionsview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{0B9978A4-5224-46A1-8588-AAC8502AA2D8}|PBapp\\PBapp.csproj|solutionrelative:pbapp\\mvvm\\views\\compositionsview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0B9978A4-5224-46A1-8588-AAC8502AA2D8}|PBapp\\PBapp.csproj|d:\\c#\\pb\\postbuilder\\pbapp\\pbapp\\services\\ingredientsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B9978A4-5224-46A1-8588-AAC8502AA2D8}|PBapp\\PBapp.csproj|solutionrelative:pbapp\\services\\ingredientsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B9978A4-5224-46A1-8588-AAC8502AA2D8}|PBapp\\PBapp.csproj|d:\\c#\\pb\\postbuilder\\pbapp\\pbapp\\mvvm\\views\\compositionsview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0B9978A4-5224-46A1-8588-AAC8502AA2D8}|PBapp\\PBapp.csproj|solutionrelative:pbapp\\mvvm\\views\\compositionsview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0B9978A4-5224-46A1-8588-AAC8502AA2D8}|PBapp\\PBapp.csproj|d:\\c#\\pb\\postbuilder\\pbapp\\pbapp\\services\\tagsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,6 +39,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GetData.cs",
+              "DocumentMoniker": "D:\\C#\\PB\\Postbuilder\\PBapp\\PBapp\\Data\\GetData.cs",
+              "RelativeDocumentMoniker": "PBapp\\Data\\GetData.cs",
+              "ToolTip": "D:\\C#\\PB\\Postbuilder\\PBapp\\PBapp\\Data\\GetData.cs",
+              "RelativeToolTip": "PBapp\\Data\\GetData.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T10:43:13.553Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -51,7 +68,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "TagsManager.cs",
               "DocumentMoniker": "D:\\C#\\PB\\Postbuilder\\PBapp\\PBapp\\Services\\TagsManager.cs",
               "RelativeDocumentMoniker": "PBapp\\Services\\TagsManager.cs",
@@ -64,7 +81,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "CompositionsView.xaml",
               "DocumentMoniker": "D:\\C#\\PB\\Postbuilder\\PBapp\\PBapp\\MVVM\\Views\\CompositionsView.xaml",
               "RelativeDocumentMoniker": "PBapp\\MVVM\\Views\\CompositionsView.xaml",
@@ -76,13 +93,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "CompositionsViewModel.cs",
               "DocumentMoniker": "D:\\C#\\PB\\Postbuilder\\PBapp\\PBapp\\MVVM\\ViewModels\\CompositionsViewModel.cs",
               "RelativeDocumentMoniker": "PBapp\\MVVM\\ViewModels\\CompositionsViewModel.cs",
               "ToolTip": "D:\\C#\\PB\\Postbuilder\\PBapp\\PBapp\\MVVM\\ViewModels\\CompositionsViewModel.cs",
               "RelativeToolTip": "PBapp\\MVVM\\ViewModels\\CompositionsViewModel.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAQwEEAAAAAAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAowDsAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-03T15:09:25.661Z",
               "EditorCaption": ""

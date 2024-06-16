@@ -113,7 +113,7 @@ namespace PBapp.Services
                 {
                     Ingredients.Remove(item);
                     OnPropertyChanged(nameof(Ingredients));
-                    GetData.WriteToJson(Ingredients, GetData.TAGSPATH);
+                    GetData.WriteToJson(Ingredients, GetData.INGREDIENTSPATH);
                     break;
                 }
             }

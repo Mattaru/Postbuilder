@@ -104,7 +104,7 @@ namespace PBapp.MVVM.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/PBapp;component/mvvm/views/compositionsview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/PBapp;V1.0.0.0;component/mvvm/views/compositionsview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\MVVM\Views\CompositionsView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PBapp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b009e25764d21fd60181998ff53f1412fcded057")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d98ddbbdcf72885d691eea633228a052a2af77bf")]
 [assembly: System.Reflection.AssemblyProductAttribute("PBapp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PBapp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
