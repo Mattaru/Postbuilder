@@ -7,12 +7,16 @@
       "RelativeMoniker": "D:0:0:{0B9978A4-5224-46A1-8588-AAC8502AA2D8}|PBapp\\PBapp.csproj|solutionrelative:pbapp\\mvvm\\viewmodels\\compositionsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B9978A4-5224-46A1-8588-AAC8502AA2D8}|PBapp\\PBapp.csproj|d:\\c#\\pb\\postbuilder\\pbapp\\pbapp\\services\\visibilitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0B9978A4-5224-46A1-8588-AAC8502AA2D8}|PBapp\\PBapp.csproj|solutionrelative:pbapp\\services\\visibilitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0B9978A4-5224-46A1-8588-AAC8502AA2D8}|PBapp\\PBapp.csproj|d:\\c#\\pb\\postbuilder\\pbapp\\pbapp\\mvvm\\views\\compositionsview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{0B9978A4-5224-46A1-8588-AAC8502AA2D8}|PBapp\\PBapp.csproj|solutionrelative:pbapp\\mvvm\\views\\compositionsview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B9978A4-5224-46A1-8588-AAC8502AA2D8}|PBapp\\PBapp.csproj|d:\\c#\\pb\\postbuilder\\pbapp\\pbapp\\services\\ingredientsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B9978A4-5224-46A1-8588-AAC8502AA2D8}|PBapp\\PBapp.csproj|solutionrelative:pbapp\\services\\ingredientsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B9978A4-5224-46A1-8588-AAC8502AA2D8}|PBapp\\PBapp.csproj|d:\\c#\\pb\\postbuilder\\pbapp\\pbapp\\services\\tagsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B9978A4-5224-46A1-8588-AAC8502AA2D8}|PBapp\\PBapp.csproj|solutionrelative:pbapp\\services\\tagsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,20 +38,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "VisibilityManager.cs",
-              "DocumentMoniker": "D:\\C#\\PB\\Postbuilder\\PBapp\\PBapp\\Services\\VisibilityManager.cs",
-              "RelativeDocumentMoniker": "PBapp\\Services\\VisibilityManager.cs",
-              "ToolTip": "D:\\C#\\PB\\Postbuilder\\PBapp\\PBapp\\Services\\VisibilityManager.cs",
-              "RelativeToolTip": "PBapp\\Services\\VisibilityManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "DocumentIndex": 2,
+              "Title": "IngredientsManager.cs",
+              "DocumentMoniker": "D:\\C#\\PB\\Postbuilder\\PBapp\\PBapp\\Services\\IngredientsManager.cs",
+              "RelativeDocumentMoniker": "PBapp\\Services\\IngredientsManager.cs",
+              "ToolTip": "D:\\C#\\PB\\Postbuilder\\PBapp\\PBapp\\Services\\IngredientsManager.cs",
+              "RelativeToolTip": "PBapp\\Services\\IngredientsManager.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAA9wDoAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T23:27:50.085Z",
+              "WhenOpened": "2024-06-15T22:18:39.283Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
+              "Title": "TagsManager.cs",
+              "DocumentMoniker": "D:\\C#\\PB\\Postbuilder\\PBapp\\PBapp\\Services\\TagsManager.cs",
+              "RelativeDocumentMoniker": "PBapp\\Services\\TagsManager.cs",
+              "ToolTip": "D:\\C#\\PB\\Postbuilder\\PBapp\\PBapp\\Services\\TagsManager.cs",
+              "RelativeToolTip": "PBapp\\Services\\TagsManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T22:10:47.073Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "CompositionsView.xaml",
               "DocumentMoniker": "D:\\C#\\PB\\Postbuilder\\PBapp\\PBapp\\MVVM\\Views\\CompositionsView.xaml",
               "RelativeDocumentMoniker": "PBapp\\MVVM\\Views\\CompositionsView.xaml",
@@ -65,7 +82,7 @@
               "RelativeDocumentMoniker": "PBapp\\MVVM\\ViewModels\\CompositionsViewModel.cs",
               "ToolTip": "D:\\C#\\PB\\Postbuilder\\PBapp\\PBapp\\MVVM\\ViewModels\\CompositionsViewModel.cs",
               "RelativeToolTip": "PBapp\\MVVM\\ViewModels\\CompositionsViewModel.cs",
-              "ViewState": "AQIAAG0AAAAAAAAAAAAYwIEAAAAAAAAA",
+              "ViewState": "AQIAACkAAAAAAAAAAAAQwEEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-03T15:09:25.661Z",
               "EditorCaption": ""

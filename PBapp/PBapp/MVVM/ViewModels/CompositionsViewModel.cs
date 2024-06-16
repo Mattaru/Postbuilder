@@ -65,7 +65,7 @@ namespace PBapp.MVVM.ViewModels
             int priority = SelectedPriority;
 
             bool added = IManager.AddNewIngredient(name, description, priority);
-            if (added && visibility == "Visible") ShowForm();
+            if (added && visibility == "Visible") HideForm();
         }
 
         #endregion
