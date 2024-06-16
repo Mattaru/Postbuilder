@@ -155,6 +155,7 @@
 
                     <TextBox Grid.Row="1"
                              Name="AddIngName"
+                             Text="{Binding IngName, UpdateSourceTrigger=PropertyChanged}"
                              Margin="0,0,0,20"
                              Style="{StaticResource TextField}"
                              Tag="Name"
@@ -163,6 +164,7 @@
 
                     <TextBox Grid.Row="2"
                              Name="AddIngDescription"
+                             Text="{Binding IngDescription, UpdateSourceTrigger=PropertyChanged}"
                              Margin="0,0,0,20"
                              TextWrapping="Wrap"
                              Style="{StaticResource TextField}"
@@ -174,6 +176,7 @@
                               Name="AddIngPriority"
                               Margin="0,0,0,20"
                               ItemsSource="{StaticResource Prioritys}"
+                              SelectedIndex="0"
                               SelectedItem="{Binding SelectedPriority}"/>
 
                     <Grid Grid.Row="4"

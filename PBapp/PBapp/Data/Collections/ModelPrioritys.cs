@@ -6,6 +6,7 @@ namespace PBapp.Data.Collections
     {
        public ModelPrioritys()
         {
+            Add(0);
             Add(1);
             Add(2);
             Add(3);

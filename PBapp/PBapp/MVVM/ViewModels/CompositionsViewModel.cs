@@ -40,7 +40,15 @@ namespace PBapp.MVVM.ViewModels
 
         #endregion
 
-        #region SelectedPriority
+        #region IngredientFormFields
+
+        private string _ingName = String.Empty;
+
+        public string IngName { get => _ingName; set => Set(ref _ingName, value); } 
+
+        private string _ingDescription = String.Empty;
+
+        public string IngDescription { get => _ingDescription; set => Set(ref _ingDescription, value); }
 
         private int _selectedPriority;
 
@@ -65,6 +73,7 @@ namespace PBapp.MVVM.ViewModels
             int priority = SelectedPriority;
 
             bool added = IManager.AddNewIngredient(name, description, priority);
+            ResetIngredientForm();
             if (added && visibility == "Visible") HideForm();
         }
 
@@ -150,6 +159,16 @@ namespace PBapp.MVVM.ViewModels
             MainGridVisibility = "Visible";
         }
 
+        private void ResetIngredientForm()
+        {
+            IngName = String.Empty;
+            OnPropertyChanged(nameof(IngName));
+            IngDescription = String.Empty;
+            OnPropertyChanged(nameof(IngDescription));
+            SelectedPriority = 0;
+            OnPropertyChanged(nameof(SelectedPriority));
+        }
+
         private void ShowForm()
         {
             MainGridVisibility = "Collapsed";
@@ -157,6 +176,7 @@ namespace PBapp.MVVM.ViewModels
             AddIngredientFormVisibility = "Visible";
             OnPropertyChanged(nameof(AddIngredientFormVisibility));
         }
+
         private void HideForm()
         {
             MainGridVisibility = "Visible";

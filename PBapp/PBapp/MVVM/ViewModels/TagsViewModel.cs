@@ -40,6 +40,14 @@ namespace PBapp.MVVM.ViewModels
 
         #endregion
 
+        #region TagFormFields
+
+        private string _tagName = String.Empty;
+
+        public string TagName { get => _tagName; set => Set(ref _tagName, value); }
+
+        #endregion
+
         // Commands
 
         #region AddNewTagCommand
@@ -55,6 +63,7 @@ namespace PBapp.MVVM.ViewModels
             string visibility = props[1].ToString();
 
             bool added = TManager.AddNewTag(name);
+            ResetTagForm();
             if (added && visibility == "Visible") HideForm();
         }
 
@@ -140,6 +149,12 @@ namespace PBapp.MVVM.ViewModels
             _mainGridVisibility = "Visible";
         }
 
+        private void ResetTagForm()
+        {
+            TagName = String.Empty;
+            OnPropertyChanged(nameof(TagName));
+        }
+
         private void ShowForm()
         {
             MainGridVisibility = "Collapsed";
@@ -147,6 +162,7 @@ namespace PBapp.MVVM.ViewModels
             AddTagFormVisibility = "Visible";
             OnPropertyChanged(nameof(AddTagFormVisibility));
         }
+
         private void HideForm()
         {
             MainGridVisibility = "Visible";
