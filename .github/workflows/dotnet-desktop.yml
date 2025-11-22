@@ -1,0 +1,43 @@
+name: Build WPF App
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    env:
+      # 👇 Adjust this if your solution name/path is different
+      Solution_Name: PBapp/PBapp.sln
+      Build_Configuration: Release
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Optional but nice to have if you use .NET Core/5+/6+/8+
+      - name: Install .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Restore NuGet packages
+        run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Build_Configuration
+
+      - name: Build solution
+        run: msbuild $env:Solution_Name /p:Configuration=$env:Build_Configuration
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Postbuilder-${{ env.Build_Configuration }}
+          path: |
+            **/bin/Release/
+            **/bin/${{ env.Build_Configuration }}/
